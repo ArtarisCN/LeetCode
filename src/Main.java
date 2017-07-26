@@ -1,4 +1,4 @@
-
+import question.FindMedianSortedArrays;
 
 /**
  * Created by rick on 2017/7/18.
@@ -10,20 +10,7 @@ public class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         long endTime = System.currentTimeMillis();    //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
-
     }
 }

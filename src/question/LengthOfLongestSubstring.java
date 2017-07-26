@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 3
  * Created by rick on 2017/7/18.
  */
 class LengthOfLongestSubstring {

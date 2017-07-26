@@ -1,6 +1,7 @@
 package question;
 
 /**
+ * 1
  * Created by RuiL on 2017/7/20.
  */
 public class TwoSum {
