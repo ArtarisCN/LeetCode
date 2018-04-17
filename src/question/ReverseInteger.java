@@ -38,7 +38,7 @@ public class ReverseInteger {
 
         int result = 0;
         for (int i = integers.size() - 1; i >= 0; i--) {
-            if(result + integers.get(i) * Math.pow(10, integers.size() - i - 1) > Integer.MAX_VALUE){
+            if (result + integers.get(i) * Math.pow(10, integers.size() - i - 1) > Integer.MAX_VALUE) {
                 return 0;
             }
 
