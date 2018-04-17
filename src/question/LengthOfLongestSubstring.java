@@ -1,8 +1,5 @@
 package question;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 3
  * Created by rick on 2017/7/18.
@@ -11,7 +8,7 @@ class LengthOfLongestSubstring {
     static int lengthOfLongestSubstring(String s) {
         int length = s.length();
 
-        if(length == 0)
+        if (length == 0)
             return 0;
 
         int maxLength = 1;
@@ -31,7 +28,7 @@ class LengthOfLongestSubstring {
 
                 char x = s.charAt(j);
 
-                if(chars[x] != -1){
+                if (chars[x] != -1) {
                     thisMaxLength = j - i;
                     break;
                 } else {
@@ -39,11 +36,11 @@ class LengthOfLongestSubstring {
                 }
             }
 
-            if(thisMaxLength == -1){
+            if (thisMaxLength == -1) {
                 thisMaxLength = length - i;
             }
 
-            if(thisMaxLength > maxLength){
+            if (thisMaxLength > maxLength) {
                 maxLength = thisMaxLength;
             }
         }
