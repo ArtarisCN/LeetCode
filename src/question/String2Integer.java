@@ -29,7 +29,7 @@ class String2Integer {
 
         for (char aChar : chars) {
             if (aChar == ' ') {
-                if () {
+                if(!legal) {
                     continue;
                 } else {
                     break;
@@ -39,7 +39,6 @@ class String2Integer {
             if (aChar == '-') {
                 if (sign == 0) {
                     sign = -1;
-                    legal = true;
                     continue;
                 } else {
                     return 0;
@@ -56,7 +55,7 @@ class String2Integer {
                 }
             }
 
-            if (aChar == '.') {
+            if(aChar == '.'){
                 break;
             }
 
@@ -82,7 +81,7 @@ class String2Integer {
                     case 1:
                         return Integer.MAX_VALUE;
                     case -1:
-                        return -Integer.MAX_VALUE - 1;
+                        return -Integer.MAX_VALUE -1;
                     default:
                         return Integer.MAX_VALUE;
                 }
