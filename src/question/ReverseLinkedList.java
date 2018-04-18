@@ -22,7 +22,7 @@ class ReverseLinkedList {
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
-        System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+        System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
     }
 
     public static ListNode reverseList(ListNode head) {
@@ -54,12 +54,12 @@ class ReverseLinkedList {
         return result;
     }
 
-    private static void printfLinkedList(ListNode node){
-        if(node == null){
+    private static void printfLinkedList(ListNode node) {
+        if (node == null) {
             System.out.println("null");
         }
 
-        while (node != null){
+        while (node != null) {
 
             System.out.println(node.val);
             node = node.next;

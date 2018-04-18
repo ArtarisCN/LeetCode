@@ -3,8 +3,14 @@ package question;
 import model.ListNode;
 
 /**
- * 2
- * Created by RuiL on 2017/7/20.
+ * question
+ * LeetCode
+ * 2017.07.20.下午3:22
+ * <p>
+ * 2. Add Two Numbers
+ * https://leetcode.com/problems/add-two-numbers/description/
+ *
+ * @author : rick
  */
 public class AddTwoNumbers {
 

@@ -4,8 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 4
- * Created by rick on 2017/7/26.
+ * question
+ * LeetCode
+ * 2017.07.26.下午3:22
+ * <p>
+ * 4. Median of Two Sorted Arrays
+ * https://leetcode.com/problems/median-of-two-sorted-arrays/description/
+ *
+ * @author : rick
  */
 public class FindMedianSortedArrays {
 

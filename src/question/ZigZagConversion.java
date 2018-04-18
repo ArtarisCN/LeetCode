@@ -4,9 +4,9 @@ package question;
  * question
  * LeetCode
  * 2018.04.16.下午6:44
- * "PAYPALISHIRING"
- * 4
- * "PINALSIGYAHRPI"
+ * <p>
+ * 6. ZigZag Conversion
+ * https://leetcode.com/problems/zigzag-conversion/description/
  *
  * @author : rick
  */

@@ -7,6 +7,9 @@ import java.util.List;
  * question
  * LeetCode
  * 2018.04.17.下午4:25
+ * <p>
+ * 8. String to Integer (atoi)
+ * https://leetcode.com/problems/string-to-integer-atoi/description/
  *
  * @author : rick
  */

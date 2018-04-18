@@ -1,8 +1,14 @@
 package question;
 
 /**
- * 1
- * Created by RuiL on 2017/7/20.
+ * question
+ * LeetCode
+ * 2017.07.20.下午4:25
+ * <p>
+ * 1. Two Sum
+ * https://leetcode.com/problems/two-sum/description/
+ *
+ * @author : rick
  */
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {

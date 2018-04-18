@@ -1,8 +1,14 @@
 package question;
 
 /**
- * 3
- * Created by rick on 2017/7/18.
+ * question
+ * LeetCode
+ * 2017.07.18.下午3:22
+ * <p>
+ * 3. Longest Substring Without Repeating Characters
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+ *
+ * @author : rick
  */
 class LengthOfLongestSubstring {
     static int lengthOfLongestSubstring(String s) {
