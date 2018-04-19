@@ -1,5 +1,7 @@
 package question;
 
+import static util.QuestionUtils.getIntegerLength;
+
 /**
  * question
  * LeetCode
@@ -19,7 +21,7 @@ class PalindromeNumber {
 
 
     public static boolean isPalindrome(int x) {
-        return isPalindromeWithoutConverteString(x, getIntegerLenght(x));
+        return isPalindromeWithoutConverteString(x, getIntegerLength(x));
     }
 
 
@@ -28,15 +30,15 @@ class PalindromeNumber {
             return false;
         }
 
-        if (length == getIntegerLenght(x)) {
+        if (length == getIntegerLength(x)) {
             if (x > 100) {
-                int left = x / ((int) Math.pow(10, (getIntegerLenght(x) - 1)));
+                int left = x / ((int) Math.pow(10, (getIntegerLength(x) - 1)));
                 int right = x % 10;
 
                 int newNumber = x / 10;
 
 
-                return left == right && isPalindromeWithoutConverteString(newNumber % ((int) Math.pow(10, (getIntegerLenght(newNumber) - 1))), length - 2);
+                return left == right && isPalindromeWithoutConverteString(newNumber % ((int) Math.pow(10, (getIntegerLength(newNumber) - 1))), length - 2);
             }
 
             if (x == 10) {
@@ -46,7 +48,7 @@ class PalindromeNumber {
             } else {
                 return true;
             }
-        } else if (length > getIntegerLenght(x)) {
+        } else if (length > getIntegerLength(x)) {
             int right = x % 10;
             if (right == 0) {
                 return isPalindromeWithoutConverteString(x / 10, length - 2);
@@ -59,11 +61,5 @@ class PalindromeNumber {
     }
 
 
-    private static int getIntegerLenght(int x) {
-        int v = Math.abs(x);
-        if (v == 0) {
-            return 0;
-        }
-        return (int) (Math.log(v) / Math.log(10)) + 1;
-    }
+
 }

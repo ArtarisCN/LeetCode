@@ -2,6 +2,9 @@ package question;
 
 import model.ListNode;
 
+import static util.QuestionUtils.buildLinkedList;
+import static util.QuestionUtils.printfLinkedList;
+
 /**
  * question
  * LeetCode
@@ -52,31 +55,5 @@ class ReverseLinkedList {
 
 
         return result;
-    }
-
-    private static void printfLinkedList(ListNode node) {
-        if (node == null) {
-            System.out.println("null");
-        }
-
-        while (node != null) {
-
-            System.out.println(node.val);
-            node = node.next;
-        }
-    }
-
-    private static ListNode buildLinkedList(int[] array) {
-        ListNode head = new ListNode(array[0]);
-        ListNode node = head;
-
-        for (int i = 1; i < array.length; i++) {
-            ListNode temp = new ListNode(array[i]);
-
-            node.next = temp;
-            node = node.next;
-        }
-
-        return head;
     }
 }

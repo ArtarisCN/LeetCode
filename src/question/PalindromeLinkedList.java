@@ -2,11 +2,14 @@ package question;
 
 import model.ListNode;
 
+import static util.QuestionUtils.buildLinkedList;
+
 /**
  * question
  * LeetCode
  * 2018.04.17.下午5:37
  * <p>
+ * 234. Palindrome Linked List
  * https://leetcode.com/problems/palindrome-linked-list/description/
  *
  * @author : rick
@@ -86,7 +89,12 @@ class PalindromeLinkedList {
         return first.val == second.val;
     }
 
-    public static boolean isPalindromeWraong(ListNode head) {
+    /**
+     * 错误方法
+     * @param head
+     * @return
+     */
+    public static boolean isPalindromeWrong(ListNode head) {
 
         if (head == null || head.next == null) {
             return true;
@@ -140,17 +148,5 @@ class PalindromeLinkedList {
         return sum == 0;
     }
 
-    private static ListNode buildLinkedList(int[] array) {
-        ListNode head = new ListNode(array[0]);
-        ListNode node = head;
 
-        for (int i = 1; i < array.length; i++) {
-            ListNode temp = new ListNode(array[i]);
-
-            node.next = temp;
-            node = node.next;
-        }
-
-        return head;
-    }
 }

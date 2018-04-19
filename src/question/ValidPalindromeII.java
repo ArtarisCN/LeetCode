@@ -56,6 +56,12 @@ class ValidPalindromeII {
         return true;
     }
 
+
+    /**
+     * 递归方法不可用，会爆栈
+     * @param s
+     * @return
+     */
     public static boolean validPalindrome2(String s) {
 
         if (s.length() < 2) {
@@ -64,9 +70,7 @@ class ValidPalindromeII {
 
         char[] chars = s.toCharArray();
 
-
         return isPalindrome(chars, true, 0, chars.length - 1);
-
     }
 
 
