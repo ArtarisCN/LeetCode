@@ -45,7 +45,7 @@ class Roman2Integer {
                     for (int i = X.length - 1; i >= 0; i--) {
                         if (temp.startsWith(X[i])) {
                             result += (i + 1) * 10;
-                            temp = temp.substring(I[i].length());
+                            temp = temp.substring(X[i].length());
                             break;
                         }
                     }
@@ -55,7 +55,7 @@ class Roman2Integer {
                     for (int i = C.length - 1; i >= 0; i--) {
                         if (temp.startsWith(C[i])) {
                             result += (i + 1) * 100;
-                            temp = temp.substring(I[i].length());
+                            temp = temp.substring(C[i].length());
                             break;
                         }
                     }
@@ -64,7 +64,7 @@ class Roman2Integer {
                     for (int i = M.length - 1; i >= 0; i--) {
                         if (temp.startsWith(M[i])) {
                             result += (i + 1) * 1000;
-                            temp = temp.substring(I[i].length());
+                            temp = temp.substring(M[i].length());
                             break;
                         }
                     }
