@@ -71,16 +71,18 @@ class SingleNumberII {
         return Integer.valueOf(resultStringPositive, 2) - Integer.valueOf(resultStringNegative, 2);
     }
 
-
-    int singleNumber(int A[], int n) {
+    /**
+     * https://blog.csdn.net/yutianzuijin/article/details/50597413
+     * @param nums
+     * @return
+     */
+    public int singleNumber2(int[] nums) {
         int one = 0, two = 0;
-        for (int i = 0; i < n; i++) {
-            two |= A[i] & one;
-            one ^= A[i];
-            int three = one & two;
-            one &= ~three;
-            two &= ~three;
+        for (int i : nums) {
+            one = (one ^ i) & ~two;
+            two = (two ^ i) & ~one;
         }
         return one;
     }
+
 }
