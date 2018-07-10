@@ -1,0 +1,12 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午5:56
+--
+-- 183. Customers Who Never Order
+-- https://leetcode.com/problems/customers-who-never-order/description/
+--
+-- @author : rick
+--
+
+SELECT Customers.Name AS Customers FROM Customers LEFT JOIN Orders ON Orders.CustomerId = Customers.Id WHERE Orders.CustomerId IS NULL

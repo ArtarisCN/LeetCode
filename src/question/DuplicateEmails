@@ -1,0 +1,15 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午5:56
+--
+-- 182. Duplicate Emails
+-- https://leetcode.com/problems/duplicate-emails/description/
+--
+-- @author : rick
+--
+
+SELECT DISTINCT p1.Email FROM Person AS p1 INNER JOIN Person AS p2 WHERE p1.Email = p2.Email AND p1.Id != p2.Id
+
+
+SELECT DISTINCT p1.Email FROM Person p1 ,Person p2 WHERE p1.Email = p2.Email AND p1.Id != p2.Id

@@ -1,0 +1,12 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午6:50
+--
+-- 596. Classes More Than 5 Students
+-- https://leetcode.com/problems/combine-two-tables/description/
+--
+-- @author : rick
+--
+
+SELECT class FROM courses GROUP BY class HAVING COUNT(DISTINCT student) >= 5
