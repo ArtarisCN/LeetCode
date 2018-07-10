@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="d1ff502d-3adb-4fe9-98a8-a0c2b68de6d9" name="LengthOfLongestSubstring" comment="LengthOfLongestSubstring" />
     <list default="true" id="ae3361cb-5948-4306-813c-13326f858843" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/question/NumberOfIslands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/question/SurroundedRegions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list id="d1ff502d-3adb-4fe9-98a8-a0c2b68de6d9" name="LengthOfLongestSubstring" comment="LengthOfLongestSubstring" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,17 +26,26 @@
       <file leaf-file-name="NumberOfIslands.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/NumberOfIslands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+            <state relative-caret-position="226">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaxAreaOfIsland.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SurroundedRegions.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/question/SurroundedRegions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MaxAreaOfIsland.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
-              <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+            <state relative-caret-position="295">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -119,8 +128,9 @@
         <option value="$PROJECT_DIR$/src/question/ExchangeSeats" />
         <option value="$PROJECT_DIR$/src/question/TwoSum.java" />
         <option value="$PROJECT_DIR$/src/question/RankScores" />
-        <option value="$PROJECT_DIR$/src/question/MaxAreaOfIsland.java" />
         <option value="$PROJECT_DIR$/src/question/NumberOfIslands.java" />
+        <option value="$PROJECT_DIR$/src/question/MaxAreaOfIsland.java" />
+        <option value="$PROJECT_DIR$/src/question/SurroundedRegions.java" />
       </list>
     </option>
   </component>
@@ -205,7 +215,7 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration name="Run" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="question.NumberOfIslands" />
+      <option name="MAIN_CLASS_NAME" value="question.SurroundedRegions" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
@@ -409,6 +419,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299539" />
@@ -418,7 +429,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49695122" weight="0.32960597" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4066727" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44724977" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32903227" />
       <window_info anchor="right" id="Coverage" sideWeight="0.5030488" side_tool="true" weight="0.32960597" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299539" />
@@ -429,7 +440,7 @@
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49848023" weight="0.24973376" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4084761" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4084761" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Properties" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -547,24 +558,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java</url>
           <line>57</line>
           <properties />
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/question/NumberOfIslands.java</url>
-          <line>37</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="102" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="i = 2,j = 3" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/question/SurroundedRegions.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="103" />
+      <option name="time" value="109" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -621,6 +633,11 @@
     </expressions>
     <expressions id="breakpointCondition">
       <expression>
+        <expression-string>i = 2,j = 3</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>i ==5</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -648,13 +665,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="10" selection-start-column="9" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/class/Decode.kt" />
     <entry file="file://$PROJECT_DIR$/src/question/MD5Util.java" />
     <entry file="file://$PROJECT_DIR$/src/question/MD5Util.class" />
@@ -979,15 +989,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/question/NumberOfIslands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        <state relative-caret-position="226">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+        <state relative-caret-position="295">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/SurroundedRegions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>
