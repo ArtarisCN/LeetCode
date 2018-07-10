@@ -25,8 +25,9 @@ public class TwoSum {
                 }
             }
 
-            if (flag)
+            if (flag) {
                 break;
+            }
         }
 
         return result;
