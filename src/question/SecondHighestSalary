@@ -9,4 +9,4 @@
 -- @author : rick
 --
 
-SELECT Salary AS SecondHighestSalary FROM Employee UNION ALL (SELECT NULL AS SecondHighestSalary) ORDER BY SecondHighestSalary DESC LIMIT 1 OFFSET 1;
+SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)

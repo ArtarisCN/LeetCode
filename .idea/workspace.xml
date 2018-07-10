@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae3361cb-5948-4306-813c-13326f858843" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/question/BigCountries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/ClassesMoreThan5Students" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/CombineTwoTables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/CustomersWhoNeverOrder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/DeleteDuplicateEmails" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/DuplicateEmails" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/EmployeesEarningMoreThanTheirManagers" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/MaxAreaOfIsland.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/RisingTemperature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/question/SecondHighestSalary" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/NotBoringMovies" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/NotBoringMovies" afterDir="false" />
-    </list>
     <list id="d1ff502d-3adb-4fe9-98a8-a0c2b68de6d9" name="LengthOfLongestSubstring" comment="LengthOfLongestSubstring" />
+    <list default="true" id="ae3361cb-5948-4306-813c-13326f858843" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/question/SwapSalary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/question/DuplicateEmails" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/DuplicateEmails" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/question/SecondHighestSalary" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/SecondHighestSalary" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,47 +22,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CombineTwoTables" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/CombineTwoTables">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="9" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DuplicateEmails" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/DuplicateEmails">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
+            <state relative-caret-position="75">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FindMedianSortedArrays.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/FindMedianSortedArrays.java">
+      <file leaf-file-name="SecondHighestSalary" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/question/SecondHighestSalary">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state relative-caret-position="75">
+              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomersWhoNeverOrder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/CustomersWhoNeverOrder">
+      <file leaf-file-name="String2Integer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/question/String2Integer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteDuplicateEmails" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/DeleteDuplicateEmails">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="240">
+              <caret line="17" column="31" selection-start-line="17" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -79,8 +52,8 @@
       <file leaf-file-name="RisingTemperature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/RisingTemperature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="20" selection-start-line="11" selection-end-line="12" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -88,26 +61,44 @@
       <file leaf-file-name="BigCountries" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/BigCountries">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="165">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaxAreaOfIsland.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MaxAreaOfIsland.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassesMoreThan5Students" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/ClassesMoreThan5Students">
+      <file leaf-file-name="SwapSalary" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/question/SwapSalary">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+            <state relative-caret-position="60">
+              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LongestPalindrome.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/question/LongestPalindrome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LongestCommonPrefix.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/question/LongestCommonPrefix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="11" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -184,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/question/SingleNumberIII.java" />
         <option value="$PROJECT_DIR$/src/question/IslandPerimeter.java" />
         <option value="$PROJECT_DIR$/src/question/NotBoringMovies" />
-        <option value="$PROJECT_DIR$/src/question/MaxAreaOfIsland.java" />
         <option value="$PROJECT_DIR$/src/question/Second Highest Salary" />
         <option value="$PROJECT_DIR$/src/question/Combine Two Tables" />
         <option value="$PROJECT_DIR$/src/question/Employees Earning More Than Their Managers" />
@@ -194,6 +184,10 @@
         <option value="$PROJECT_DIR$/src/question/Rising Temperature" />
         <option value="$PROJECT_DIR$/src/question/Big Countries" />
         <option value="$PROJECT_DIR$/src/question/ClassesMoreThan5Students" />
+        <option value="$PROJECT_DIR$/src/question/MaxAreaOfIsland.java" />
+        <option value="$PROJECT_DIR$/src/question/DuplicateEmails" />
+        <option value="$PROJECT_DIR$/src/question/SwapSalary" />
+        <option value="$PROJECT_DIR$/src/question/SecondHighestSalary" />
       </list>
     </option>
   </component>
@@ -621,7 +615,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java</url>
-          <line>106</line>
+          <line>109</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
@@ -710,13 +704,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -831,20 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/LongestCommonPrefix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/LongestPalindrome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/question/PalindromeLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -917,13 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/String2Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="31" selection-start-line="17" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/question/TwoSum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -962,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/SecondHighestSalary">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="149" selection-start-line="11" selection-start-column="149" selection-end-line="11" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/question/AddTwoNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1004,17 +963,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/DuplicateEmails">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/question/FindMedianSortedArrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/LongestPalindrome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/LongestCommonPrefix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/BigCountries">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/RisingTemperature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -1025,24 +1012,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/RisingTemperature">
+    <entry file="file://$PROJECT_DIR$/src/question/String2Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" selection-start-line="11" selection-end-line="12" />
+        <state relative-caret-position="240">
+          <caret line="17" column="31" selection-start-line="17" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/BigCountries">
+    <entry file="file://$PROJECT_DIR$/src/question/DuplicateEmails">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="21" />
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/MaxAreaOfIsland.java">
+    <entry file="file://$PROJECT_DIR$/src/question/SecondHighestSalary">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/SwapSalary">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>
