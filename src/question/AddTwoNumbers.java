@@ -3,8 +3,14 @@ package question;
 import model.ListNode;
 
 /**
- * 2
- * Created by RuiL on 2017/7/20.
+ * question
+ * LeetCode
+ * 2017.07.20.下午3:22
+ * <p>
+ * 2. Add Two Numbers
+ * https://leetcode.com/problems/add-two-numbers/description/
+ *
+ * @author : rick
  */
 public class AddTwoNumbers {
 
@@ -17,11 +23,11 @@ public class AddTwoNumbers {
         ListNode firstNode = result;
 
         boolean flag = true;
-        while (flag){
+        while (flag) {
 
             flag = false;
 
-            if (l1 != null && l2 != null){
+            if (l1 != null && l2 != null) {
                 ListNode thisNode = new ListNode((l1.val + l2.val + carry) % 10);
 
                 carry = (l1.val + l2.val + carry) / 10;
@@ -35,7 +41,7 @@ public class AddTwoNumbers {
                 continue;
             }
 
-            if(l1 == null && l2 != null){
+            if (l1 == null && l2 != null) {
                 ListNode thisNode = new ListNode((l2.val + carry) % 10);
 
                 carry = (l2.val + carry) / 10;
@@ -49,7 +55,7 @@ public class AddTwoNumbers {
                 continue;
             }
 
-            if(l1 != null){
+            if (l1 != null) {
                 ListNode thisNode = new ListNode((l1.val + carry) % 10);
 
                 carry = (l1.val + carry) / 10;
@@ -64,7 +70,7 @@ public class AddTwoNumbers {
             }
 
 
-            if(carry != 0){
+            if (carry != 0) {
                 ListNode thisNode = new ListNode(carry);
 
                 carry = 0;

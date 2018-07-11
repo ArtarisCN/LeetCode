@@ -1,0 +1,12 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午5:56
+--
+-- 197. Rising Temperature
+-- https://leetcode.com/problems/rising-temperature/description/
+--
+-- @author : rick
+--
+
+SELECT w2.Id FROM Weather AS w1 INNER JOIN Weather AS w2  WHERE DATEDIFF(w2.RecordDate, w1.RecordDate) = 1 AND w1.Temperature < w2.Temperature

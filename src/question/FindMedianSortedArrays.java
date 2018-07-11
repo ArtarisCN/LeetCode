@@ -4,8 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 4
- * Created by rick on 2017/7/26.
+ * question
+ * LeetCode
+ * 2017.07.26.下午3:22
+ * <p>
+ * 4. Median of Two Sorted Arrays
+ * https://leetcode.com/problems/median-of-two-sorted-arrays/description/
+ *
+ * @author : rick
  */
 public class FindMedianSortedArrays {
 
@@ -14,16 +20,16 @@ public class FindMedianSortedArrays {
 
         List<Integer> merge = new LinkedList<>();
 
-        int length1 = nums1.length,length2 = nums2.length;
+        int length1 = nums1.length, length2 = nums2.length;
 
-        int i = 0 ,j = 0;
+        int i = 0, j = 0;
 
         boolean flag = true;
-        while (flag){
+        while (flag) {
 
-            if(i < length1 && j < length2){
+            if (i < length1 && j < length2) {
 
-                if(nums1[i] < nums2[j] ){
+                if (nums1[i] < nums2[j]) {
                     merge.add(nums1[i]);
                     i++;
                     continue;
@@ -34,25 +40,25 @@ public class FindMedianSortedArrays {
                 }
             }
 
-            if(i == length1 && j < length2){
+            if (i == length1 && j < length2) {
                 merge.add(nums2[j]);
                 j++;
                 continue;
             }
 
-            if(i < length1 && j == length2){
+            if (i < length1 && j == length2) {
                 merge.add(nums1[i]);
                 i++;
                 continue;
             }
 
 
-            if(i == length1 && j == length2){
+            if (i == length1 && j == length2) {
                 flag = false;
             }
         }
 
-        if(merge.size() > 0) {
+        if (merge.size() > 0) {
             if (merge.size() % 2 == 1) {
                 middle = merge.get(merge.size() / 2);
             } else {

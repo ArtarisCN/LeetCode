@@ -1,0 +1,12 @@
+--
+-- question
+-- LeetCode
+-- 2018.07.09.下午3:19
+--
+-- 176. Second Highest Salary
+-- https://leetcode.com/problems/second-highest-salary/description/
+--
+-- @author : rick
+--
+
+SELECT MAX(Salary) AS SecondHighestSalary FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)

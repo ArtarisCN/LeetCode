@@ -1,0 +1,12 @@
+--
+-- question
+-- LeetCode
+-- 2018.07.10.上午1:28
+--
+-- 178. Rank Scores
+-- https://leetcode.com/problems/rank-scores/description/
+--
+-- @author : rick
+--
+
+SELECT Score

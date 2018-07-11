@@ -1,0 +1,13 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午5:56
+--
+-- 627.Swap Salary
+-- https://leetcode.com/problems/swap-salary/description/
+--
+-- @author : rick
+--
+
+UPDATE salary SET sex = (CASE WHEN sex = 'm'   THEN  'f'  ELSE 'm'   END)
+UPDATE salary SET sex = IF(sex = 'm', 'f', 'm')

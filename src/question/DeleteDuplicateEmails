@@ -1,0 +1,11 @@
+--
+-- question
+-- LeetCode
+-- 2018.04.19.下午5:56
+--
+-- 196. Delete Duplicate Emails
+-- https://leetcode.com/problems/delete-duplicate-emails/description/
+--
+-- @author : rick
+--
+DELETE p2 FROM Person AS p1 INNER JOIN Person AS p2 ON p1.Email = p2.Email WHERE p1.Id < p2.Id

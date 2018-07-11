@@ -1,0 +1,15 @@
+--
+-- question
+-- LeetCode
+-- 2018.07.10.上午11:40
+--
+-- 626. Exchange Seats
+-- https://leetcode.com/problems/exchange-seats/description/
+--
+-- @author : rick
+--
+
+SELECT (CASE WHEN id % 2 != 0 AND id = counts THEN id
+             WHEN id % 2 != 0 AND id != counts THEN id + 1
+             ELSE id - 1 END) AS id ,student AS FROM seat,
+             (SELECT COUNT(*) AS counts FROM seat) AS c ORDER BY id
