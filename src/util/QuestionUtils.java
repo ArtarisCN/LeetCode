@@ -21,13 +21,14 @@ public class QuestionUtils {
      * @return
      */
     public static ListNode buildLinkedList(int[] array) {
+        if(array.length == 0)
+            return null;
+
         ListNode head = new ListNode(array[0]);
         ListNode node = head;
 
         for (int i = 1; i < array.length; i++) {
-            ListNode temp = new ListNode(array[i]);
-
-            node.next = temp;
+            node.next = new ListNode(array[i]);
             node = node.next;
         }
 
