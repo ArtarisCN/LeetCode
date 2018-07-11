@@ -34,6 +34,8 @@ public class QuestionUtils {
         return head;
     }
 
+
+
     /**
      * 打印链表
      *
