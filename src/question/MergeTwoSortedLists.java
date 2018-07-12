@@ -20,7 +20,7 @@ class MergeTwoSortedLists {
         QuestionUtils.printfLinkedList(
                 mergeTwoLists(
                         QuestionUtils.buildLinkedList(new int[]{}),
-                        QuestionUtils.buildLinkedList(new int[]{1})
+                        QuestionUtils.buildLinkedList(new int[]{})
                 )
         );
 
@@ -31,21 +31,35 @@ class MergeTwoSortedLists {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
-        ListNode temp = new ListNode();
+        ListNode temp ,result;
 
-        ListNode result = temp;
+        if(l1 == null){
+            return l2;
+        } else if(l2 == null){
+            return l1;
+        }
+
+        if(l1.val < l2.val){
+            temp = l1;
+            l1 = l1.next;
+        } else {
+            temp = l2;
+            l2 = l2.next;
+        }
+
+        result = temp;
+
 
         while (l1 != null && l2 != null){
             if(l1.val < l2.val){
                 temp.next = l1;
                 l1 = l1.next;
-
+                temp = temp.next;
             } else {
                 temp.next = l2;
                 l2 = l2.next;
+                temp = temp.next;
             }
-
-            temp = temp.next;
         }
 
 
@@ -57,6 +71,6 @@ class MergeTwoSortedLists {
             temp.next = l2;
         }
 
-        return result.next;
+        return result;
     }
 }
