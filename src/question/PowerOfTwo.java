@@ -41,4 +41,10 @@ class PowerOfTwo {
         return true;
     }
 
+    public static boolean isPowerOfTwo2(int n) {
+
+        return n > 0  && ((n & (n - 1) )== 0);
+    }
+
+
 }
