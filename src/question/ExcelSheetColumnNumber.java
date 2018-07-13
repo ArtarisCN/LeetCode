@@ -4,7 +4,7 @@ package question;
  * question
  * LeetCode
  * 2018.07.13.下午2:11
- *
+ * <p>
  * 171. Excel Sheet Column Number
  * https://leetcode.com/problems/excel-sheet-column-number/description/
  *
@@ -33,7 +33,7 @@ class ExcelSheetColumnNumber {
 
         for (int i = chars.length - 1; i >= 0; i--) {
 
-            result += Math.pow(decimal,chars.length - i - 1) * (chars[i] - 'A' + 1);
+            result += Math.pow(decimal, chars.length - i - 1) * (chars[i] - 'A' + 1);
 
         }
 
