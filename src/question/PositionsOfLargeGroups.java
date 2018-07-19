@@ -21,14 +21,14 @@ class PositionsOfLargeGroups {
 
         List<List<Integer>> result = largeGroupPositions("abbxxxxzzyyy");
 
-        for (List<Integer> integers : result) {
-            System.out.println(integers.get(0) + " " + integers.get(1));
-        }
-
-
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+
+
+        for (List<Integer> integers : result) {
+            System.out.println(integers.get(0) + " " + integers.get(1));
+        }
     }
 
 
@@ -51,6 +51,7 @@ class PositionsOfLargeGroups {
 
             i = j - 1;
         }
+
         return result;
     }
 }
