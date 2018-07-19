@@ -4,7 +4,7 @@ package question;
  * question
  * LeetCode
  * 2018.07.19.下午4:48
- *
+ * <p>
  * 476. Number Complement
  * https://leetcode.com/problems/number-complement/description/
  *
@@ -27,11 +27,11 @@ class NumberComplement {
 
     public static int findComplement(int num) {
 
-        int length = (int)(Math.log(num)/Math.log(2));
+        int length = (int) (Math.log(num) / Math.log(2));
 
-        int x = (int) (Math.pow(2,length + 1) - 1);
+        int x = (int) (Math.pow(2, length + 1) - 1);
 
-        return num^x;
+        return num ^ x;
     }
 
     public static int findComplement2(int num) {
