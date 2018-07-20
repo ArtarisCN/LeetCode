@@ -42,7 +42,5 @@ class SumOfLeftLeaves {
         }
 
         return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
-        ;
-
     }
 }
