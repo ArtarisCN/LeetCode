@@ -80,4 +80,19 @@ class ToeplitzMatrix {
         return true;
     }
 
+
+    public boolean isToeplitzMatrixMAX(int[][] matrix) {
+
+        for (int i = 1; i < matrix.length; i++) {
+            int j=1;
+            for (; j < i && j < matrix[0].length; j++) {
+                if(matrix[i][j]!=matrix[i-j][0]) return false;
+            }
+            for (;j < matrix[0].length; j++) {
+                if(matrix[i][j]!=matrix[0][j-i]) return false;
+            }
+        }
+        return true;
+    }
+
 }
