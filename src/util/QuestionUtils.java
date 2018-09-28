@@ -54,6 +54,14 @@ public class QuestionUtils {
         }
     }
 
+    public static void printfArray(int[] array) {
+        if (array != null) {
+            for (int i : array) {
+                System.out.println(i);
+            }
+        }
+    }
+
     /**
      * 获取int 型长度
      * @param x
