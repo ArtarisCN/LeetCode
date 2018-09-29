@@ -2,6 +2,7 @@ package util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 import model.ListNode;
 
@@ -63,6 +64,14 @@ public class QuestionUtils {
     }
 
     public static <T> void printfArray(T[] array) {
+        if (array != null) {
+            for (T i : array) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static <T> void printfArrayList(List<T> array) {
         if (array != null) {
             for (T i : array) {
                 System.out.println(i);
