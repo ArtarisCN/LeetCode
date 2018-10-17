@@ -4,7 +4,7 @@ package question;
  * question
  * LeetCode
  * 2018.07.12.1:11
- *
+ * <p>
  * 26. Remove Duplicates from Sorted Array
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
  *
@@ -14,7 +14,7 @@ class RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
-        int[] nums = new int[]{1,1,2,2,4};
+        int[] nums = new int[]{1, 2, 3, 4, 5};
 
         System.out.println(String.valueOf(removeDuplicates(nums)));
 
@@ -27,30 +27,59 @@ class RemoveDuplicatesFromSortedArray {
     }
 
     public static int removeDuplicates(int[] nums) {
+        if (nums.length == 1)
+            return 1;
 
-        if (nums.length == 0) {
-            return 0;
-        }
+        if (nums.length == 2)
+            return nums[0] == nums[1] ? 1 : 2;
 
-        int ex, count = nums.length - 1;
+        int index;
+        for (index = 0; index < nums.length - 1; ) {
+            if (nums[index] < nums[index + 1]) {
+                index++;
+                continue;
+            }
 
-        for (int i = 0; i < nums.length && count > i; i++) {
+            if (nums[index] == nums[index + 1]) {
+                boolean find = false;
+                for (int i = index + 2; i <= nums.length - 1; i++) {
+                    if (nums[i] > nums[index + 1]) {
+                        find = true;
+                        nums[i] += nums[index + 1];
+                        nums[index + 1] = nums[i] - nums[index + 1];
+                        nums[i] = nums[i] - nums[index + 1];
+                        index++;
+                        break;
+                    }
+                }
+                if (find) {
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
-            if(nums[i] >= nums[i + 1]){
-
-                ex = nums[i + 2];
-                nums[i + 2] = nums[i + 1];
-                nums[i + 1] = ex;
-
-                i--;
+            if (nums[index] > nums[index + 1]) {
+                boolean find = false;
+                for (int i = index + 2; i <= nums.length - 1; i++) {
+                    if (nums[i] > nums[index]) {
+                        find = true;
+                        nums[i] += nums[index + 1];
+                        nums[index + 1] = nums[i] - nums[index + 1];
+                        nums[i] = nums[i] - nums[index + 1];
+                        index++;
+                        break;
+                    }
+                }
+                if (find) {
+                    continue;
+                } else {
+                    break;
+                }
             }
         }
 
-
-
-        return count + 1;
-
-
+        return index + 1;
     }
 
 
