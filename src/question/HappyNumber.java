@@ -7,7 +7,7 @@ import java.util.List;
  * question
  * LeetCode
  * 2018.10.18.10:10
- *
+ * <p>
  * 202.Happy Number
  * https://leetcode.com/problems/happy-number/
  *
@@ -27,28 +27,28 @@ class HappyNumber {
     }
 
     public static boolean isHappy(int n) {
-        return isHappyNum(new ArrayList<>(),n);
+        return isHappyNum(new ArrayList<>(), n);
     }
 
-    public static boolean isHappyNum(List<Integer> nums, int n){
+    public static boolean isHappyNum(List<Integer> nums, int n) {
 
         int sum = -1;
-        while (n != 0){
-            if(sum == -1){
+        while (n != 0) {
+            if (sum == -1) {
                 sum = 0;
             }
-            sum += (n%10)*(n%10);
+            sum += (n % 10) * (n % 10);
             n /= 10;
         }
         System.out.println(sum);
-        if(sum == 1 || sum == 7){
+        if (sum == 1 || sum == 7) {
             return true;
         } else {
-            if(nums.contains(sum)){
+            if (nums.contains(sum)) {
                 return false;
             } else {
                 nums.add(sum);
-                return isHappyNum(nums,sum);
+                return isHappyNum(nums, sum);
             }
         }
     }
