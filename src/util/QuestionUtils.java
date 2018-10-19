@@ -2,9 +2,11 @@ package util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.ListNode;
+import model.TreeNode;
 
 /**
  * util
@@ -34,6 +36,36 @@ public class QuestionUtils {
         }
 
         return head;
+    }
+
+    public static TreeNode buildBinaryTree(int[] array){
+        if(array.length == 0){
+            return null;
+        }
+
+        TreeNode root = new TreeNode(array[0]);
+        List<TreeNode> list = new ArrayList<>();
+        list.add(root);
+        for (int i = 1; i < array.length; i++) {
+            if(array[i] == 0){
+                list.add(null);
+                continue;
+            } else {
+                if(i % 2 == 1){
+                    TreeNode node = new TreeNode(array[i]);
+                    TreeNode link = list.get((i - 1)/2);
+                    link.left = node;
+                    list.add(node);
+                } else {
+                    TreeNode node = new TreeNode(array[i]);
+                    TreeNode link = list.get((i - 2)/2);
+                    link.right = node;
+                    list.add(node);
+                }
+            }
+        }
+
+        return root;
     }
 
 
@@ -70,6 +102,7 @@ public class QuestionUtils {
             }
         }
     }
+
 
     public static <T> void printfArrayList(List<T> array) {
         if (array != null) {
