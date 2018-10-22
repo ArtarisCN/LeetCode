@@ -1,6 +1,6 @@
 package question;
 
-import util.QuestionUtils;
+import util.PrintUtils;
 
 /**
  * question
@@ -18,7 +18,7 @@ class ConstructTheRectangle {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        QuestionUtils.printfArray(constructRectangle(6));
+        PrintUtils.printfArray(constructRectangle(6));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -1,6 +1,7 @@
 package question;
 
 import model.ListNode;
+import util.PrintUtils;
 import util.QuestionUtils;
 
 /**
@@ -17,7 +18,7 @@ class MergeTwoSortedLists {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
-        QuestionUtils.printfLinkedList(
+        PrintUtils.printfLinkedList(
                 mergeTwoLists(
                         QuestionUtils.buildLinkedList(new int[]{}),
                         QuestionUtils.buildLinkedList(new int[]{})

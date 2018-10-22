@@ -2,8 +2,8 @@ package question;
 
 import model.ListNode;
 
+import static util.PrintUtils.printfLinkedList;
 import static util.QuestionUtils.buildLinkedList;
-import static util.QuestionUtils.printfLinkedList;
 
 /**
  * question

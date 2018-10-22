@@ -1,6 +1,7 @@
 package question;
 
 import model.ListNode;
+import util.PrintUtils;
 import util.QuestionUtils;
 
 /**
@@ -19,7 +20,7 @@ class RemoveLinkedListElements {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        QuestionUtils.printfLinkedList(removeElements(QuestionUtils.buildLinkedList(new int[]{}), 6));
+        PrintUtils.printfLinkedList(removeElements(QuestionUtils.buildLinkedList(new int[]{}), 6));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

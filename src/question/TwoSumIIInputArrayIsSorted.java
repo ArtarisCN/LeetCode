@@ -1,6 +1,6 @@
 package question;
 
-import util.QuestionUtils;
+import util.PrintUtils;
 
 /**
  * question
@@ -18,8 +18,7 @@ class TwoSumIIInputArrayIsSorted {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-
-        QuestionUtils.printfArray(twoSum(new int[]{2, 7, 11, 15}, 9));
+        PrintUtils.printfArray(twoSum(new int[]{2, 7, 11, 15}, 9));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import util.QuestionUtils;
+import util.PrintUtils;
 
 /**
  * question
@@ -23,7 +23,7 @@ class UncommonWordsFromTwoSentences {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        QuestionUtils.printfArray(uncommonFromSentences("apple apple", "banana"));
+        PrintUtils.printfArray(uncommonFromSentences("apple apple", "banana"));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

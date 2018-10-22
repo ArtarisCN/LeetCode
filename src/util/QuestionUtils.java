@@ -68,50 +68,6 @@ public class QuestionUtils {
         return root;
     }
 
-
-
-    /**
-     * 打印链表
-     *
-     * @param node
-     */
-    public static void printfLinkedList(ListNode node) {
-        if (node == null) {
-            System.out.println("null");
-        }
-
-        while (node != null) {
-
-            System.out.println(node.val);
-            node = node.next;
-        }
-    }
-
-    public static void printfArray(int[] array) {
-        if (array != null) {
-            for (int i : array) {
-                System.out.println(i);
-            }
-        }
-    }
-
-    public static <T> void printfArray(T[] array) {
-        if (array != null) {
-            for (T i : array) {
-                System.out.println(i);
-            }
-        }
-    }
-
-
-    public static <T> void printfArrayList(List<T> array) {
-        if (array != null) {
-            for (T i : array) {
-                System.out.println(i);
-            }
-        }
-    }
-
     /**
      * 获取int 型长度
      * @param x

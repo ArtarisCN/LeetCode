@@ -3,7 +3,7 @@ package question;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.QuestionUtils;
+import util.PrintUtils;
 
 /**
  * question
@@ -20,7 +20,7 @@ class PascalsTriangleII {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        QuestionUtils.printfArrayList(getRow(0));
+        PrintUtils.printfArrayList(getRow(0));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
