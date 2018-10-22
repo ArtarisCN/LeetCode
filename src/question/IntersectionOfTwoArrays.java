@@ -10,7 +10,7 @@ import util.PrintUtils;
  * question
  * LeetCode
  * 2018.10.22.10:07
- *
+ * <p>
  * 349. Intersection of Two Arrays
  * https://leetcode.com/problems/intersection-of-two-arrays/
  *
@@ -22,8 +22,8 @@ class IntersectionOfTwoArrays {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(intersection(new int[]{1,2,2,1},
-                new int[]{2,2}));
+        PrintUtils.printfArray(intersection(new int[]{1, 2, 2, 1},
+                new int[]{2, 2}));
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
@@ -37,7 +37,7 @@ class IntersectionOfTwoArrays {
 
         Set<Integer> result = new HashSet<>();
         for (int i : nums2) {
-            if(set.contains(i)){
+            if (set.contains(i)) {
                 result.add(i);
             }
         }
@@ -45,9 +45,9 @@ class IntersectionOfTwoArrays {
         int[] d = new int[result.size()];
         int i = 0;
         Iterator iter = result.iterator();
-        while(iter.hasNext()){
-            d[i] = (int)iter.next();
-            i ++;
+        while (iter.hasNext()) {
+            d[i] = (int) iter.next();
+            i++;
         }
 
         return d;
