@@ -17,20 +17,6 @@ public class TreeNode {
         val = x;
     }
 
-    public void buildTreeNode(TreeNode node,int data){
-        if(data < node.val){
-            if(node.left == null){
-                node.left = new TreeNode(data);
-            }else{
-                buildTreeNode(node.left,data);
-            }
-        }else{
-            if(node.right == null){
-                node.right = new TreeNode(data);
-            }else{
-                buildTreeNode(node.right,data);
-            }
-        }
-    }
+
 
 }
