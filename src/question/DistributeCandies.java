@@ -21,4 +21,15 @@ class DistributeCandies {
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
     }
+
+    public int distributeCandies(int[] candies) {
+
+        for (int candy : candies) {
+
+        }
+
+        return 0;
+    }
+
+
 }
