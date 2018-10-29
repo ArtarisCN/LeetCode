@@ -38,7 +38,8 @@ class SurfaceAreaOf3DShapes {
                         right = j == grid[i].length - 1 ? 0 : grid[i][j + 1],
                         bottom = i == grid.length - 1 ? 0 : grid[i + 1][j];
                 int height = grid[i][j];
-                surfaceArea += height == 0 ? 0 : 2 + (height - top > 0 ? height - top : 0) +
+                surfaceArea += height == 0 ? 0 : 2 +
+                        (height - top > 0 ? height - top : 0) +
                         (height - left > 0 ? height - left : 0) +
                         (height - right > 0 ? height - right : 0) +
                         (height - bottom > 0 ? height - bottom : 0);
