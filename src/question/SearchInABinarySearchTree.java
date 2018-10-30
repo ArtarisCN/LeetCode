@@ -15,7 +15,6 @@ import util.QuestionUtils;
  */
 class SearchInABinarySearchTree {
 
-
     public static void main(String[] args) {
         //获取开始时间
         long startTime = System.currentTimeMillis();
