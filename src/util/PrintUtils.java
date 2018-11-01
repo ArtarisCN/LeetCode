@@ -46,6 +46,14 @@ public class PrintUtils {
         }
     }
 
+    public static void printf2DArray(int[][] result) {
+        for (int[] aResult : result) {
+            for (int anAResult : aResult) {
+                System.out.print(anAResult + " ");
+            }
+            System.out.println();
+        }
+    }
 
     public static <T> void printfArrayList(List<T> array) {
         if (array != null) {
