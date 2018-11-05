@@ -27,27 +27,26 @@ class ConstructStringFromBinaryTree {
     }
 
     public static String tree2str(TreeNode t) {
-        return printfTree(t);
+        return printfTree(t).toString();
     }
 
-    private static String printfTree(TreeNode t) {
+    private static StringBuilder printfTree(TreeNode t) {
         if (t == null) {
-            return "";
+            return new StringBuilder();
         }
 
         if (t.left == null && t.right == null) {
-            return String.valueOf(t.val);
+            return new StringBuilder(String.valueOf(t.val));
         }
 
         if (t.left == null) {
-            return String.valueOf(t.val) + "()(" + printfTree(t.right) + ")";
+            return new StringBuilder(String.valueOf(t.val)).append("()(").append(printfTree(t.right)).append(")");
         }
 
         if (t.right == null) {
-            return String.valueOf(t.val) + "(" + printfTree(t.left) + ")";
+            return new StringBuilder(String.valueOf(t.val)).append("(").append(printfTree(t.left)).append(")");
         }
-
-        return String.valueOf(t.val) + "(" + printfTree(t.left) + ")(" + printfTree(t.right) + ")";
+        return new StringBuilder(String.valueOf(t.val)).append("(").append(printfTree(t.left)).append(")(").append(printfTree(t.right)).append(")");
     }
 
 }
