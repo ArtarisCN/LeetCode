@@ -1,69 +1,59 @@
 package question;
 
 /**
- * Created by rick on 2017/7/26.
+ * question
+ * LeetCode
+ * 2017/7/26.12:42
+ * <p>
+ * 409. Longest Palindrome
+ * https://leetcode.com/problems/longest-palindrome/
+ *
+ * @author : artairs
  */
 public class LongestPalindrome {
-    public static String longestPalindrome(String s) {
-        int length = s.length();
 
-        if (length < 2)
-            return s;
+    public static void main(String[] args) {
+        //获取开始时间
+        long startTime = System.currentTimeMillis();
 
-        if (length == 2) {
-            if (isPalindrome(s))
-                return s;
-            else
-                return s.substring(0, 1);
-        }
+        System.out.println(longestPalindrome("abccccdd"));
 
-        int maxLength = 1;
-        int start = 0;
-        int end = 0;
+        //获取结束时间
+        long endTime = System.currentTimeMillis();
+        System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+    }
 
-        for (int i = 0; i < length; i++) {
-            if (length - i - 1 < maxLength)
-                break;
+    public static int longestPalindrome(String s) {
+        char[] chars = s.toCharArray();
+        int[] letters = new int[52];
+        int result = 0;
+        for (char aChar : chars) {
+            if (aChar >= 'a' && aChar <= 'z') {
 
+                if (letters[aChar - 'a'] == 1) {
+                    letters[aChar - 'a'] = 0;
+                    result += 2;
+                } else if (letters[aChar - 'a'] == 0) {
+                    letters[aChar - 'a'] = 1;
+                }
 
-            for (int j = length - 1; j > i; j--) {
-                if (j - i < maxLength)
-                    break;
-
-                if (isPalindrome(s.substring(i, j + 1))) {
-                    maxLength = j - i + 1;
-                    start = i;
-                    end = j;
+            } else if (aChar >= 'A' && aChar <= 'Z') {
+                if (letters[aChar - 'A' + 26] == 1) {
+                    letters[aChar - 'A' + 26] = 0;
+                    result += 2;
+                } else if (letters[aChar - 'A' + 26] == 0) {
+                    letters[aChar - 'A' + 26] = 1;
                 }
             }
         }
 
-        return s.substring(start, end + 1);
-    }
-
-
-    private static boolean isPalindrome(String s) {
-        int length = s.length();
-        if (length < 2)
-            return true;
-
-        if (length == 2)
-            return s.charAt(0) == s.charAt(length - 1);
-
-        return s.charAt(0) == s.charAt(length - 1) && isPalindrome(s.substring(1, length - 1));
-    }
-
-    public static String longestPalindromeManacher(String s) {
-
-        StringBuilder sb = new StringBuilder(s);
-
-        for (int i = 0; i < s.length(); i++) {
-
+        for (int letter : letters) {
+            if (letter == 1) {
+                return ++result;
+            }
         }
 
-
-        return null;
-
+        return result;
     }
 
 }
