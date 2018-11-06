@@ -47,10 +47,8 @@ public class LongestPalindrome {
             }
         }
 
-        for (int letter : letters) {
-            if (letter == 1) {
-                return ++result;
-            }
+        if (result < s.length()) {
+            return ++result;
         }
 
         return result;
