@@ -1,5 +1,7 @@
 package util;
 
+import com.sun.istack.internal.NotNull;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class QuestionUtils {
      * @param array
      * @return
      */
-    public static ListNode buildLinkedList(int[] array) {
+    public static @NotNull ListNode buildLinkedList(int[] array) {
         if(array.length == 0)
             return null;
 
