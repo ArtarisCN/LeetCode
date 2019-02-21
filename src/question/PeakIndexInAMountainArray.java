@@ -16,13 +16,14 @@ class PeakIndexInAMountainArray {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
+
+
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
     }
 
     public static int peakIndexInMountainArray(int[] A) {
-
         if (A.length <= 1) {
             return 0;
         }

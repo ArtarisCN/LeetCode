@@ -246,4 +246,51 @@ public class SortUtils {
             }
         }
     }
+
+    //                  =======================================================
+    //                  =                                                     =
+    //                  =                                                     =
+    //                  =                       基数排序                        =
+    //                  =                                                     =
+    //                  =                                                     =
+    //                  =======================================================
+    public static void radixSort(int[] num) {
+        if(num.length == 0)
+            return;
+
+        int maxV = num[0];
+
+        for (int i : num) {
+            if (maxV < i) {
+                maxV = i;
+            }
+        }
+
+        for (int i = 1; maxV / i > 0; i *= 10) {
+            radixSortHelp(num, i);
+        }
+    }
+
+    private static void radixSortHelp(int num[], int exp) {
+        int[] output = new int[num.length];             // 存储"被排序数据"的临时数组
+        int[] buckets = new int[10];
+        // 将数据出现的次数存储在buckets[]中
+        for (int aNum : num){
+            buckets[(aNum / exp) % 10]++;
+        }
+
+        // 更改buckets[i]。目的是让更改后的buckets[i]的值，是该数据在output[]中的位置。
+        for (int i = 1; i < 10; i++) {
+            buckets[i] += buckets[i - 1];
+        }
+
+        // 将数据存储到临时数组output[]中
+        for (int i = num.length - 1; i >= 0; i--) {
+            output[buckets[(num[i] / exp) % 10] - 1] = num[i];
+            buckets[(num[i] / exp) % 10]--;
+        }
+
+        // 将排序好的数据赋值给a[]
+        System.arraycopy(output, 0, num, 0, num.length);
+    }
 }
