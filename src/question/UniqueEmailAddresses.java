@@ -19,7 +19,7 @@ class UniqueEmailAddresses {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        System.out.println(numUniqueEmails(new String[]{"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"}));
+        System.out.println(numUniqueEmails(new String[]{"delegate.email+alex@leetcode.com", "delegate.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
