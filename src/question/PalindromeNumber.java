@@ -1,7 +1,5 @@
 package question;
 
-import static util.QuestionUtils.getIntegerLength;
-
 /**
  * question
  * LeetCode
@@ -19,7 +17,20 @@ class PalindromeNumber {
 
     }
 
+    public static boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+        return isPalindromeWithoutConvertString(x, String.valueOf(x).length());
+    }
+    public static boolean isPalindromeWithoutConvertString(int x, int length) {
+        if ((x % 10) == ((int) (x / Math.pow(10, length - 1)))) {
+            return length < 2 || isPalindromeWithoutConvertString((int) ((x / 10) % (Math.pow(10, length - 2))), length - 2);
+        }
+        return false;
+    }
 
+/*
     public static boolean isPalindrome(int x) {
         return isPalindromeWithoutConverteString(x, getIntegerLength(x));
     }
@@ -59,7 +70,7 @@ class PalindromeNumber {
 
         return true;
     }
-
+*/
 
 
 }

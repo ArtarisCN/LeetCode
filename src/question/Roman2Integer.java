@@ -28,7 +28,6 @@ class Roman2Integer {
         String temp = s;
 
         while (temp.length() > 0) {
-
             switch (temp.charAt(0)) {
                 case 'I':
                 case 'V':
