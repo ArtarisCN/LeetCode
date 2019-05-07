@@ -1,5 +1,70 @@
 # LeetCode 解题笔记
 
+项目环境：
+IntelliJ IDEA 2018.2.8 (Community Edition)
+Build #IC-182.5262.2, built on March 28, 2019
+JRE: 1.8.0_152-release-1248-b22 x86_64
+JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+macOS 10.14.4
+
+
+### [36. Valid Sudoku](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
+判断一个数独是不是有效的，要求是
+
+1. 数字 1-9 在每一行只能出现一次。
+2. 数字 1-9 在每一列只能出现一次。
+3. 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
+
+其实也就是按照这三条规则检查一遍，看看每行每列每个方块是不是有重复的地方（暴力搜解方法好！）
+这次我学习的重点是判断一个数列是否有重复的数据，
+```
+int mask = (1 << board[i][j]);
+if ( (row & mask) != 0)
+    return false;
+else
+    row |= mask;
+```
+先取一个数用1去左移动char个位置，记录这一位被置为1，然后用这一个只有这一位为1其他全为0的数去与之前的数；
+如果不为0，说明之前的数这一位也不为0（两个相同的1才不为0），返回错误；
+如果为0，用或来记录这一位出现过的数；
+
+这里涉及到了另一个问题：int类型左移位数超过32位的问题，比如1左移50位结果是什么
+int类型的数据占4个字节，一共32位，所以最多左移31位，那么后面的50如何处理呢
+测试结果：1<<50 = 1<<18
+50跟18相差了32，有人可能猜到了跟int类型占32位有关，也确实如此
+根据java规范中描述 int a<<b, b这个操作数只能取二进制数的低五位（就是最后5位）
+50的二进制表示00…00 000110010 后五位 10010就是18
+b操作数取后五位，也可以理解成 b/32 取余数
+所以 int a << b 可以理解成 int a << (b%32)
+
+
+这个方法非常精妙（反正我是没想到）不过也有局限性，就是记录的这个数不能超过32
+
+### [20.Valid Parentheses](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
+括号匹配问题，最简单的使用栈来解决的问题。
+建立一个栈，开始遍历数据；
+如果读到的数据是左括号，则直接入栈；
+如果是右括号，则peek当前栈，如果弹出的与之匹配的左括号，则弹出当前peek的字符；如果不是，直接报错「因为不可能出现 '{(}' 这样的正确序列」
+其他数据不管，继续遍历（本题没有其他数据，正常的括号中间有一些运算符不用检查）
+### [283. Move Zeroes](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MoveZeroes.java)
+
+查到每一个0和非0的位置，调换他们的位置。
+
+### [66. Plus One](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PlusOne.java)
+从最后一位+1，对10取余数看是否有进位，有进位就对下一位+1。最后检查一下最后一位进位是不是1，是1就在前面+1。
+
+本质上是在模仿进位加法。
+### [217. Contains Duplicate](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ContainsDuplicate.java)
+使用一个Set，每次存的时候看一下是否contains，有的话就返回false
+
+### [122.Best Time to Buy and Sell Stock II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BestTimeToBuyAndSellStockII.java)
+
+给一组股票的数据代表每天的价格，要求倒买倒卖使差价最大。
+
+先假装持有第一个的股票，然后向后遍历。
+假如后面的某一天比当前的价格便宜，假装没买过之前的，持有便宜的那天的股价；
+假如后面的某一天比当前的股价贵，说明有的赚，差价就是收益，然后持有后一天的股价，继续向后遍历；
+一次遍历就结束了。
 ### [26. Remove Duplicates from Sorted Array](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RemoveDuplicatesFromSortedArray.java)
 计算一个排好序的数组里有多少不重复的数据，并把它们移动到原数组的前面。
 使用两个指针，一个A指针指向当前不重复的数据，一个B指针指向后面查找的位置。
@@ -142,7 +207,7 @@ nums1[index --] = i >= 0 && nums1[i] > nums2[j]?nums1[i --]:nums2[j--];
 
 如果有两个向量(x1,y1),(x2,y2)
 - 平行：x1 * y1 == x2 * y2
-- 垂直 x1 * y1 + x2 * y2 == 0
+- 垂直：x1 * y1 + x2 * y2 == 0
 
 ### [166. Fraction to Recurring Decimal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/FractionToRecurringDecimal.java)
 

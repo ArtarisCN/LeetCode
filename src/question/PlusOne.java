@@ -27,29 +27,20 @@ class PlusOne {
     }
 
     public static int[] plusOne(int[] digits) {
-
         if(digits.length < 1){
             return digits;
         }
 
         int plus = 1;
-
         for (int i = digits.length - 1; i >= 0; i--) {
-
             int val = digits[i] + plus;
-
             digits[i] = val % 10;
-
             plus = val / 10;
-
             if(plus == 0){
                 break;
             }
         }
-
-
         if(plus == 1){
-
             int[] result = new int[digits.length + 1];
             result[0] = 1;
             System.arraycopy(digits, 0, result, 1, result.length - 1);
@@ -57,7 +48,5 @@ class PlusOne {
         }
 
         return digits;
-
-
     }
 }

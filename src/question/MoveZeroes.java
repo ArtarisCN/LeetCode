@@ -4,7 +4,7 @@ package question;
  * question
  * LeetCode
  * 2018.07.13.下午3:39
- *
+ * <p>
  * 283. Move Zeroes
  * https://leetcode.com/problems/move-zeroes/description/
  *
@@ -15,7 +15,7 @@ class MoveZeroes {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        int[] nums = new int[]{4,2,4,0,0,3,0,5,1,0};
+        int[] nums = new int[]{4, 2, 4, 0, 0, 3, 0, 5, 1, 0};
 
         moveZeroes(nums);
 
@@ -30,10 +30,10 @@ class MoveZeroes {
 
     public static void moveZeroes(int[] nums) {
 
-        int currentZ,currentN;
+        int currentZ, currentN;
 
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i] == 0) {
+            if (nums[i] == 0) {
                 currentZ = findZero(nums, i);
                 currentN = findNum(nums, i);
 
@@ -49,58 +49,42 @@ class MoveZeroes {
         }
     }
 
-    public static int findZero(int[] nums,int index){
-        if(nums[index] == 0){
+    public static int findZero(int[] nums, int index) {
+        if (nums[index] == 0) {
             return index;
         }
 
         int result = index;
-        while (result < nums.length && nums[result] != 0){
-            result ++;
+        while (result < nums.length && nums[result] != 0) {
+            result++;
         }
-        return result == index?-1:result;
+        return result == index ? -1 : result;
     }
 
-    public static int findNum(int[] nums,int index){
-        if(nums[index] != 0){
+    public static int findNum(int[] nums, int index) {
+        if (nums[index] != 0) {
             return index;
         }
 
         int result = index;
-        while (result < nums.length && nums[result] == 0){
-            result ++;
+        while (result < nums.length && nums[result] == 0) {
+            result++;
         }
-        return result == index?-1:result;
+        return result == index ? -1 : result;
     }
-
 
 
     public static void moveZeroes2(int[] nums) {
+        int k = 0;
 
-        int count = nums.length - 1;
-
-        for (int i = 0; i < nums.length && i < count; i++) {
-            while (nums[count] == 0 && count != 0){
-                count --;
-            }
-
-            if(count <= i){
-                break;
-            }
-
-            if(nums[i] == 0){
-                int temp = nums[count];
-                nums[count] = nums[i];
-                nums[i] = temp;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[k++] = nums[i];
             }
         }
 
-        if(nums[0] == 0){
-            return;
-        }
-
-        while (nums[count] == 0 && count != 0){
-            count --;
+        for (int i = k; i < nums.length; i++) {
+            nums[i] = 0;
         }
     }
 }
