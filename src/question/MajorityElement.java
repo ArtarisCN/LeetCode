@@ -1,5 +1,6 @@
 package question;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +25,11 @@ class MajorityElement {
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+    }
+
+    public static int majorityElement2(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
     }
 
     public static int majorityElement(int[] nums) {
