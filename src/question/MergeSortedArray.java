@@ -17,13 +17,9 @@ class MergeSortedArray {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-//        int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
-//        int[] nums1 = new int[]{1};
-//        merge(nums1, 1, new int[]{}, 0);
-
-        int[] nums1 = new int[]{4,5,6,0,0,0};
-        merge2(nums1, 3, new int[]{1,2,3}, 3);
-
+        int[] nums1 = new int[]{1, 2, 4, 5, 6, 0};
+        int[] nums2 = new int[]{3, 5, 6, 0, 0, 0};
+        merge(nums1, 5, nums2, 1);
 
         for (int i : nums1) {
             System.out.print(i + " ");
@@ -35,22 +31,10 @@ class MergeSortedArray {
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (n == 0) {
-            return;
-        }
+        int i = m - 1, j = n - 1, index = m + n - 1;
 
-        int i = 0, j = 0;
-        while (i < m) {
-            if (nums2[j] < nums1[i]) {
-                nums2[j] += nums1[i];
-                nums1[i] = nums2[j] - nums1[i];
-                nums2[j] = nums2[j] - nums1[i];
-            }
-            i++;
-        }
-
-        for (int k = 0; k < n; k++) {
-            nums1[i + k] = nums2[k];
+        while (j >= 0){
+            nums1[index --] = i >= 0 && nums1[i] > nums2[j]?nums1[i --]:nums2[j--];
         }
     }
 
