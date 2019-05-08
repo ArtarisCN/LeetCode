@@ -43,7 +43,6 @@ class FirstUniqueCharacterInAString {
             if (codes[chars[i] - 'a'] == -1) {
                 codes[chars[i] - 'a'] = i;
                 index.add(chars[i] - 'a');
-//                index[i] = chars[i] - 'a';
             } else {
                 codes[chars[i] - 'a'] = -2;
             }
@@ -56,6 +55,19 @@ class FirstUniqueCharacterInAString {
         }
 
         return -1;
+    }
+
+    public int firstUniqChar2(String s) {
+        int result = -1;
+        for(int i='a';i<='z';i++){
+            int first = s.indexOf(i);
+            if(first!=-1){
+                int last = s.lastIndexOf(i);
+                if(first==last)
+                    result = result==-1? first:Math.min(result,last);
+            }
+        }
+        return result;
     }
 
 }

@@ -1,16 +1,27 @@
 # LeetCode 解题笔记
 
 项目环境：
+```
 IntelliJ IDEA 2018.2.8 (Community Edition)
-
 Build #IC-182.5262.2, built on March 28, 2019
-
 JRE: 1.8.0_152-release-1248-b22 x86_64
-
 JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
-
 macOS 10.14.4
+```
 
+### [387. First Unique Character in a String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
+
+笨办法：
+先创建一个记录所有字母的数组，并赋值为-1
+遍历这个数组，如果这个字符没有出现过，就在记录数组里记录他的位置；
+如果出现过，就记录出现次数，最后遍历一下就行了。
+
+聪明办法：
+遍历a-z(注意不是遍历字符串)判断indexOf和lastIndexOf是不是相同的，如果是，说明它只出现了一次（indexOf返回第一次出现的位置，lastIndexOf返回最后一次出现的位置）跟目前最小的位置比较记录。最后返回。
+
+### [344. Reverse String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
+
+使用一个While循环，左右往里递进调换位置就行了,没啥好说的
 
 ### [36. Valid Sudoku](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
 判断一个数独是不是有效的，要求是
@@ -30,30 +41,19 @@ else
     row |= mask;
 ```
 先取一个数用1去左移动char个位置，记录这一位被置为1，然后用这一个只有这一位为1其他全为0的数去与之前的数；
-
 如果不为0，说明之前的数这一位也不为0（两个相同的1才不为0），返回错误；
-
 如果为0，用或来记录这一位出现过的数；
 
-
 这里涉及到了另一个问题：int类型左移位数超过32位的问题，比如1左移50位结果是什么
-
 int类型的数据占4个字节，一共32位，所以最多左移31位，那么后面的50如何处理呢
-
 测试结果：1<<50 = 1<<18
-
 50跟18相差了32，有人可能猜到了跟int类型占32位有关，也确实如此
-
 根据java规范中描述 int a<<b, b这个操作数只能取二进制数的低五位（就是最后5位）
-
 50的二进制表示00…00 000110010 后五位 10010就是18
-
 b操作数取后五位，也可以理解成 b/32 取余数
-
 所以 int a << b 可以理解成 int a << (b%32)
 
-这个方法非常精妙（反正我是没想到）
-
+这个方法非常精妙（反正我是没想到）不过局限性在于只能判断不超过32个数，不然没这么多位供判断
 ### [20.Valid Parentheses](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
 括号匹配问题，最简单的使用栈来解决的问题。
 建立一个栈，开始遍历数据；

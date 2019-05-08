@@ -33,17 +33,31 @@ public class PrintUtils {
     public static void printfArray(int[] array) {
         if (array != null) {
             for (int i : array) {
-                System.out.println(i);
+                System.out.print(i);
+                System.out.print(" ");
             }
         }
+        System.out.println();
+    }
+
+    public static void printfArray(char[] array) {
+        if (array != null) {
+            for (char i : array) {
+                System.out.print(i);
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
     }
 
     public static <T> void printfArray(T[] array) {
         if (array != null) {
             for (T i : array) {
-                System.out.println(i);
+                System.out.print(i);
+                System.out.print(" ");
             }
         }
+        System.out.println();
     }
 
     public static void printf2DArray(int[][] result) {
