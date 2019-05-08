@@ -38,7 +38,7 @@ class CountAndSay {
 
         while (n > 1) {
 
-            String thisStr = new String(currentString);
+            String thisStr = currentString;
             sb = new StringBuilder();
 
             char[] currentChars = currentString.toCharArray();
@@ -119,7 +119,6 @@ class CountAndSay {
         }
 
         return currentString;
-
     }
 
 }

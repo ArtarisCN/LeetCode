@@ -9,8 +9,12 @@ JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 macOS 10.14.4
 ```
 
+### [21. Merge Two Sorted Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MergeTwoSortedLists.java)
+合并两个有序链表。
+首先判断两个链表的头哪个小，哪个小以哪个开头，记下这个头节点，并把这个小的链表后移一位
+开始循环比较，哪个链表的头小就把哪个的头接在要构造的链表屁股上，把这个小的链表往后移动一位，直到有一个链表的next == null
+最后判断哪个不为空(有可能一个为空，有可能两个都为空，但不可能都不为空)，继续把这个不为空的链表全部接在要构造的链表屁股上，返回之前记录的头节点
 ### [387. First Unique Character in a String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
-
 笨办法：
 先创建一个记录所有字母的数组，并赋值为-1
 遍历这个数组，如果这个字符没有出现过，就在记录数组里记录他的位置；
@@ -18,11 +22,8 @@ macOS 10.14.4
 
 聪明办法：
 遍历a-z(注意不是遍历字符串)判断indexOf和lastIndexOf是不是相同的，如果是，说明它只出现了一次（indexOf返回第一次出现的位置，lastIndexOf返回最后一次出现的位置）跟目前最小的位置比较记录。最后返回。
-
 ### [344. Reverse String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
-
 使用一个While循环，左右往里递进调换位置就行了,没啥好说的
-
 ### [36. Valid Sudoku](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
 判断一个数独是不是有效的，要求是
 

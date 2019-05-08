@@ -44,7 +44,6 @@ class ValidPalindrome {
         }
 
         return true;
-
     }
 
     private static char getCharacterType(char c) {

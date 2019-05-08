@@ -16,16 +16,16 @@ import java.util.List;
 class String2Integer {
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("  -0012a42"));
+        System.out.println(myAtoi("-13+8"));
     }
 
     public static int myAtoi(String str) {
-
-
         char[] chars = str.toCharArray();
-
         boolean legal = false;
-
+        /**
+         * -1:负号
+         * 1：正号
+         */
         int sign = 0;
 
         List<Integer> resultArray = new ArrayList<>();
@@ -38,11 +38,13 @@ class String2Integer {
                     break;
                 }
             }
-
             if (aChar == '-') {
                 if (sign == 0) {
                     sign = -1;
+                    legal = true;
                     continue;
+                } else if (legal) {
+                    break;
                 } else {
                     return 0;
                 }
@@ -53,6 +55,8 @@ class String2Integer {
                     sign = 1;
                     legal = true;
                     continue;
+                } else if (legal) {
+                    break;
                 } else {
                     return 0;
                 }
@@ -69,6 +73,10 @@ class String2Integer {
                 }
 
                 break;
+            }
+
+            if (sign == 0) {
+                sign = 1;
             }
 
             legal = true;
@@ -94,8 +102,6 @@ class String2Integer {
         }
 
         return sign == 0 ? result : sign * result;
-
-
     }
 
 }
