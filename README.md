@@ -83,7 +83,8 @@ b操作数取后五位，也可以理解成 b/32 取余数
 ### [26. Remove Duplicates from Sorted Array](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RemoveDuplicatesFromSortedArray.java)
 计算一个排好序的数组里有多少不重复的数据，并把它们移动到原数组的前面。
 使用两个指针，一个A指针指向当前不重复的数据，一个B指针指向后面查找的位置。
-A从首位开始查，如果下一位小于(小于是因为后面调位置出现的)等于当前位置，就开始移动B指针找到下一个大于A指针指向的数，然后移动到A指针的下一位，A指针后移一位，继续查找，直到B指针查到最后一位为止。
+A从首位开始查，如果下一位小于(小于是因为后面调位置出现的)等于当前位置，就开始移动B指针找到下一个大于A指针指向的数。
+然后移动到A指针的下一位，A指针后移一位，继续查找，直到B指针查到最后一位为止。
 ### [350. Intersection of Two Arrays II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IntersectionOfTwoArraysII.java)
 给定两个数组，计算它们的交集。
 
