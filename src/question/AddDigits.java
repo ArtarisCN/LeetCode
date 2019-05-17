@@ -16,7 +16,7 @@ class AddDigits {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        System.out.println(String.valueOf(addDigits(0)));
+        System.out.println(String.valueOf(addDigits(38)));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
@@ -24,11 +24,7 @@ class AddDigits {
     }
 
     public static int addDigits(int num) {
-        if (num == 0) {
-            return 0;
-        }
-
-        return num % 9 == 0 ? 9 : num % 9;
+        return num == 0?0:num % 9 == 0 ? 9 : num % 9;
     }
 
 }

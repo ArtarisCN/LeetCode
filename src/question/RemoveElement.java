@@ -33,7 +33,7 @@ class RemoveElement {
             return 0;
         }
 
-        int ex, count = nums.length - 1, cal = 0;
+        int ex, count = nums.length - 1;
 
         for (int i = 0; i < nums.length && count > i; i++) {
             while (nums[count] == val && count > 0) {

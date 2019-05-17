@@ -15,7 +15,8 @@ class BestTimeToBuyAndSellStock {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        System.out.println(maxProfit(new int[]{7,6,4,3,1}));
+        //        int[] nums = new int[]{4,2,7,5,11,13,9,1};
+        System.out.println(maxProfit(new int[]{2,9,1,5}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
@@ -23,17 +24,15 @@ class BestTimeToBuyAndSellStock {
     }
 
     public static int maxProfit(int[] prices) {
-        int max = 0;
-        for (int i = 0; i < prices.length; i++) {
-
-            for (int j = i + 1; j < prices.length; j++) {
-                int min = prices[j] - prices[i];
-                if (min > 0 && min > max) {
-                    max = min;
-                }
-            }
+        int result = 0;
+        int small;
+        if (prices.length == 0) return 0;
+        else small = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] - small > result) result = prices[i] - small;
+            if (prices[i] < small) small = prices[i];
         }
-        return max;
+        return result;
     }
 
 }

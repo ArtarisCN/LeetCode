@@ -2,6 +2,7 @@ package util;
 
 import java.util.List;
 
+import model.LRUCache;
 import model.ListNode;
 
 /**
@@ -74,6 +75,15 @@ public class PrintUtils {
             for (T i : array) {
                 System.out.println(i);
             }
+        }
+    }
+
+    public static void printCache(LRUCache cache) {
+        System.out.println("-------");
+        LRUCache.Entry node = cache.head;
+        while (node != null){
+            System.out.println(node.key + " " + node.value);
+            node = node.next;
         }
     }
 
