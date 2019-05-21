@@ -8,13 +8,53 @@ JRE: 1.8.0_152-release-1248-b22 x86_64
 JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 macOS 10.14.4
 ```
+### [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+从最大的底长入手，即当容器的底等于数组的长度时，则容器的盛水量为较短边的长乘底
+设定左右两个指针，分别指向左右两个极限值，由于底长已经是最大，面积主要受短边影响
+每次移动短边的指针，边移动边比较总容量，最后记录即可，直到两指针相遇停止。
+让人疑惑的是为什么这种算法下不会错过最佳指针地点（就是以这两个指针为左右的时候面积比其他情况都大），假设最大值的左右指针的位置是 x,y。
+假设左指针先移动到x，这时右指针必然在y + a(a > 0)的位置「如果右指针在y - a 的位置说明是右指针先到最佳地点，与假设不符；如果右指针在y的位置说明没有错过最佳地点，这两个点的面积会被比较到」这时要错过只会是 x 的长度小于 y + a 的长度才会移动左指针造成错过的情况，但是这样的话 x————y 的面积一定小于 x————(y+a)的又与假设矛盾。
+假设右指针先移动到y的推理过程类似，所以不会错过最佳指针地点。
+### [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
+我先 trim 了一下去除末尾空格，
+后序遍历字符串，如果遇到空格就跳出循环，边遍历边计数
+### [146. LRU Cache](https://leetcode.com/problems/lru-cache/)
+制作一个LRU缓存，思路是制造一个双向链表。
+- 查找的时候顺序查找，如果找到了，就把它提到首位来
+- 插入的时候先查一下是否已经有这个key
+    - 如果有，替换值并且把它放到首位来
+    - 如果没有，检查是否超过限制了
+        - 超过了，把最后一个尾节点断链，存入新的值，放到首位
+        - 没超过，构造一个新的值来放到首位
+
+优化的思路是使用一个 Key-Entry 的 HashMap 来存整个链表，查的时候会快很多。
+
+### [134. Gas Station](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/GasStation.java)
+
+这个我自己没找到最简算法，通过了但是时间空间复杂度很垃圾。
+先进行一遍遍历看看总的燃料够不够总消耗，并且当前站能不能作为开始站（就是判断当前站的燃料是不是超过当前站的消耗）并记录下来。
+然后就是遍历每一个开始站，加上下一站的燃料并且减去消耗，判断是不是为负，如果回到原点了，就说明可以，不然不行。
+注意在数组末尾的换行。
 
 ### [21. Merge Two Sorted Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MergeTwoSortedLists.java)
 合并两个有序链表。
 首先判断两个链表的头哪个小，哪个小以哪个开头，记下这个头节点，并把这个小的链表后移一位
 开始循环比较，哪个链表的头小就把哪个的头接在要构造的链表屁股上，把这个小的链表往后移动一位，直到有一个链表的next == null
 最后判断哪个不为空(有可能一个为空，有可能两个都为空，但不可能都不为空)，继续把这个不为空的链表全部接在要构造的链表屁股上，返回之前记录的头节点
+### [8. String to Integer (atoi)](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/String2Integer.java)
+用了三个记录变量，一个是字符串转的char数组，一个是符号位，一个是判断是否非法的标志位。
+经过一系列判断...把每一位放到一个数组里，最后经过判断是否超过了Integer.MAX_VALUE，然后返回。
+这个题我觉得没啥难点，就是条件判断有点多...
+### [125. Valid Palindrome](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidPalindrome.java)
+没啥特别注意的，就是用两个指针一个在左一个在右向中间缩小判断是否一样
+提前处理一下大小写的问题（我是处理了，其实也可以不处理，就是在判断的时候多一种条件就行了）
+### [242. Valid Anagram](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidAnagram.java)
+判断是否两个字符串出现过的字母一致
+先判断长度是不是一样
+遍历第一个字符串，用一个哈希表记录每个字符出现的次数
+遍历第一个字符串，在上一个哈希表里减去出现过的字符，减成负的说明不一致
 ### [387. First Unique Character in a String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
+
 笨办法：
 先创建一个记录所有字母的数组，并赋值为-1
 遍历这个数组，如果这个字符没有出现过，就在记录数组里记录他的位置；
@@ -22,8 +62,11 @@ macOS 10.14.4
 
 聪明办法：
 遍历a-z(注意不是遍历字符串)判断indexOf和lastIndexOf是不是相同的，如果是，说明它只出现了一次（indexOf返回第一次出现的位置，lastIndexOf返回最后一次出现的位置）跟目前最小的位置比较记录。最后返回。
+
 ### [344. Reverse String](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseString.java)
+
 使用一个While循环，左右往里递进调换位置就行了,没啥好说的
+
 ### [36. Valid Sudoku](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ValidParentheses.java)
 判断一个数独是不是有效的，要求是
 
@@ -83,8 +126,7 @@ b操作数取后五位，也可以理解成 b/32 取余数
 ### [26. Remove Duplicates from Sorted Array](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RemoveDuplicatesFromSortedArray.java)
 计算一个排好序的数组里有多少不重复的数据，并把它们移动到原数组的前面。
 使用两个指针，一个A指针指向当前不重复的数据，一个B指针指向后面查找的位置。
-A从首位开始查，如果下一位小于(小于是因为后面调位置出现的)等于当前位置，就开始移动B指针找到下一个大于A指针指向的数。
-然后移动到A指针的下一位，A指针后移一位，继续查找，直到B指针查到最后一位为止。
+A从首位开始查，如果下一位小于(小于是因为后面调位置出现的)等于当前位置，就开始移动B指针找到下一个大于A指针指向的数，然后移动到A指针的下一位，A指针后移一位，继续查找，直到B指针查到最后一位为止。
 ### [350. Intersection of Two Arrays II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IntersectionOfTwoArraysII.java)
 给定两个数组，计算它们的交集。
 
