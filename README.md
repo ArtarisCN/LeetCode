@@ -1,13 +1,23 @@
 # LeetCode 解题笔记
 
 项目环境：
+
+> IntelliJ IDEA 2018.2.8 (Community Edition)
+> Build #IC-182.5262.2, built on March 28, 2019
+> JRE: 1.8.0_152-release-1248-b22 x86_64
+> JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+> macOS 10.14.4
+
+### [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+动态规划问题
+动态规划问题想到某个点向右下角移动的路径是不受之前怎么走影响的，所以某个点的最佳路径可以根据它后面的走法确定，再根据这个点去确定前面的路径走法。
+动态转移方程为：
 ```
-IntelliJ IDEA 2018.2.8 (Community Edition)
-Build #IC-182.5262.2, built on March 28, 2019
-JRE: 1.8.0_152-release-1248-b22 x86_64
-JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
-macOS 10.14.4
+result[x][y] = Math.min(grid[x][y] + result[x + 1][y], grid[x][y] + result[x][y + 1]);
 ```
+某个点的值等于它当前点的值和右边或者下边的和取最小值，如果不知道右边或者下边的值，则先去计算右边或者下边的值，并记录下来。
+其他需要注意的的就是边界条件判断。
+
 ### [120. Triangle](https://leetcode.com/problems/triangle/)
 还是动态规划的问题，这题的解题方法时自上而下的寻找最佳路径。
 从最多的那一层开始找，向上寻找最短路径，每个结点的最佳路径是当前的节点的值加上它左右子树的最小值，因为计算过的节点到最下层的最佳路径已经算出来了，下一层怎么到最低层不影响上面的路径变化，所有自底向上是思路的方向。
