@@ -8,7 +8,9 @@ JRE: 1.8.0_152-release-1248-b22 x86_64
 JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 macOS 10.14.4
 ```
-
+### [120. Triangle](https://leetcode.com/problems/triangle/)
+还是动态规划的问题，这题的解题方法时自上而下的寻找最佳路径。
+从最多的那一层开始找，向上寻找最短路径，每个结点的最佳路径是当前的节点的值加上它左右子树的最小值，因为计算过的节点到最下层的最佳路径已经算出来了，下一层怎么到最低层不影响上面的路径变化，所有自底向上是思路的方向。
 ### [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 最简单的动态规划问题
 每一节楼梯的可能性K是由它前两节楼梯实现的，比如第K(n)节的可能性等于K(n)+K(n-1)
