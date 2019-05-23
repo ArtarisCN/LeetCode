@@ -28,94 +28,87 @@ class Integer2Roman {
     }
 
     public static String intToRoman(int num) {
-
-        int[] array = new int[getIntegerLength(num)];
+        int size = getIntegerLength(num);
         int temp = num;
-
         int ruler = 1;
+        int x;
 
-        String result = "";
-
-        int x = 0;
-
-        for (int i = 0; i < array.length && temp != 0; i++) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < size && temp != 0; i++) {
 
             x = temp % 10;
             temp /= 10;
 
-            String thisValue = "";
+            StringBuilder thisValue = new StringBuilder();
 
             switch (ruler) {
                 case 1:
                     if (x < 4) {
                         for (int j = 0; j < x; j++) {
-                            thisValue += "I";
+                            thisValue.append("I");
                         }
                     } else if (x == 4) {
-                        thisValue += "IV";
+                        thisValue.append("IV");
                     } else if (x == 5) {
-                        thisValue += "V";
+                        thisValue.append("V");
                     } else if (x < 9) {
-                        thisValue += "V";
+                        thisValue.append("V");
                         for (int j = x; j > 5; j--) {
-                            thisValue += "I";
+                            thisValue.append("I");
                         }
                     } else {
-                        thisValue += "IX";
+                        thisValue.append("IX");
                     }
                     break;
                 case 10:
                     if (x < 4) {
                         for (int j = 0; j < x; j++) {
-                            thisValue += "X";
+                            thisValue.append("X");
                         }
                     } else if (x == 4) {
-                        thisValue += "XL";
+                        thisValue.append("XL");
                     } else if (x == 5) {
-                        thisValue += "L";
+                        thisValue.append("L");
                     } else if (x < 9) {
-                        thisValue += "L";
+                        thisValue.append("L");
                         for (int j = x; j > 5; j--) {
-                            thisValue += "X";
+                            thisValue.append("X");
                         }
                     } else {
-                        thisValue += "XC";
+                        thisValue.append("XC");
                     }
                     break;
                 case 100:
                     if (x < 4) {
                         for (int j = 0; j < x; j++) {
-                            thisValue += "C";
+                            thisValue.append("C");
                         }
                     } else if (x == 4) {
-                        thisValue += "CD";
+                        thisValue.append("CD");
                     } else if (x == 5) {
-                        thisValue += "D";
+                        thisValue.append("D");
                     } else if (x < 9) {
-                        thisValue += "D";
+                        thisValue.append("D");
                         for (int j = x; j > 5; j--) {
-                            thisValue += "C";
+                            thisValue.append("C");
                         }
                     } else {
-                        thisValue += "CM";
+                        thisValue.append("CM");
                     }
                     break;
                 case 1000:
                     for (int j = 0; j < x; j++) {
-                        thisValue += "M";
+                        thisValue.append("M");
                     }
                     break;
                 default:
                     break;
             }
 
-            result = thisValue + result;
-
+            result = thisValue.append(result);
             ruler *= 10;
         }
-
-
-        return result;
+        return result.toString();
     }
 
 

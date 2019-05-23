@@ -8,6 +8,22 @@ JRE: 1.8.0_152-release-1248-b22 x86_64
 JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 macOS 10.14.4
 ```
+
+### [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+最简单的动态规划问题
+每一节楼梯的可能性K是由它前两节楼梯实现的，比如第K(n)节的可能性等于K(n)+K(n-1)
+「因为第n节楼梯只能由第 n-1 楼梯或者 n-2 楼梯完成，就是这两种情况的和」
+解法有两种，自上而下或者自下而上
+- 自上而下
+递归的求解，欲求第 n 节必先求 n-1 和 n-2，第 n-1 节必先求 n-2 和 n-3，一层层递归下来，终止条件是0或者1
+- 自下而上
+已知0或者1层时的结果都是1，循环向上求解，最终得到第n层结果
+
+这两种解法都需要一个辅助数组来记录求过的某层，因为求解第n层结果的时候会被计算多次，比如欲求第 n 节必先求 n-1 和 **n-2**层，欲求第 n-1 节必先求 **n-2** 和 n-3。这里**n-2**被计算了多次，记录可以避免多次重复计算。
+### [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)
+整数转罗马数字
+因为罗马数字最多只有四位，我这里把每一位分类讨论的。每一位（个十百千）分别转成罗马数字再拼起来
+
 ### [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 从最大的底长入手，即当容器的底等于数组的长度时，则容器的盛水量为较短边的长乘底
 设定左右两个指针，分别指向左右两个极限值，由于底长已经是最大，面积主要受短边影响
@@ -28,14 +44,11 @@ macOS 10.14.4
         - 没超过，构造一个新的值来放到首位
 
 优化的思路是使用一个 Key-Entry 的 HashMap 来存整个链表，查的时候会快很多。
-
 ### [134. Gas Station](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/GasStation.java)
-
 这个我自己没找到最简算法，通过了但是时间空间复杂度很垃圾。
 先进行一遍遍历看看总的燃料够不够总消耗，并且当前站能不能作为开始站（就是判断当前站的燃料是不是超过当前站的消耗）并记录下来。
 然后就是遍历每一个开始站，加上下一站的燃料并且减去消耗，判断是不是为负，如果回到原点了，就说明可以，不然不行。
 注意在数组末尾的换行。
-
 ### [21. Merge Two Sorted Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MergeTwoSortedLists.java)
 合并两个有序链表。
 首先判断两个链表的头哪个小，哪个小以哪个开头，记下这个头节点，并把这个小的链表后移一位
