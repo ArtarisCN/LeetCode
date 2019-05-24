@@ -3,12 +3,29 @@
 项目环境：
 
 > IntelliJ IDEA 2018.2.8 (Community Edition)
+>
 > Build #IC-182.5262.2, built on March 28, 2019
+>
 > JRE: 1.8.0_152-release-1248-b22 x86_64
+>
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+>
 > macOS 10.14.4
 
-### [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+### [15. 3Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ThreeSum.java)
+计算三个数相加为0，切不能有重复
+首先想到的就是把数组排序，排好序之后固定一个数，其他两个数从这个数的右边剩余的数的两头开始取，和大了就把左边的指针往右移动，小了就把右边的指针往右移动
+排好序的好处是避免了重复检查的情况，固定了第一个数得到了一组答案，随后这个数向右移动，所得到的答案的所有数，肯定都比这个数大，不会有重复的。
+这里需要注意两个检查
+- 第一个数固定，如果下次检查的数和上次的相等，则跳过这次检查
+- 找到三个数之后，这三个数和上次的三个数都不同，才添加
+
+因为我们的数组是排好序的，所以只用记录上次的三个数就行了，更久远额就不用记录了（因为检查一限定了这次的三个数肯定比上上次的三个数要大）
+
+### [67. Add Binary](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/AddBinary.java)
+给两个字符串二进制形，对他们做加法在转成二进制输出
+就是末尾对齐然后开始加，计算进位，我用的 StringBuilder 来进行相加。
+### [64. Minimum Path Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MinimumPathSum.java)
 动态规划问题
 动态规划问题想到某个点向右下角移动的路径是不受之前怎么走影响的，所以某个点的最佳路径可以根据它后面的走法确定，再根据这个点去确定前面的路径走法。
 动态转移方程为：
@@ -17,11 +34,10 @@ result[x][y] = Math.min(grid[x][y] + result[x + 1][y], grid[x][y] + result[x][y 
 ```
 某个点的值等于它当前点的值和右边或者下边的和取最小值，如果不知道右边或者下边的值，则先去计算右边或者下边的值，并记录下来。
 其他需要注意的的就是边界条件判断。
-
-### [120. Triangle](https://leetcode.com/problems/triangle/)
+### [120. Triangle](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Triangle.java)
 还是动态规划的问题，这题的解题方法时自上而下的寻找最佳路径。
 从最多的那一层开始找，向上寻找最短路径，每个结点的最佳路径是当前的节点的值加上它左右子树的最小值，因为计算过的节点到最下层的最佳路径已经算出来了，下一层怎么到最低层不影响上面的路径变化，所有自底向上是思路的方向。
-### [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+### [70. Climbing Stairs](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ClimbingStairs.java)
 最简单的动态规划问题
 每一节楼梯的可能性K是由它前两节楼梯实现的，比如第K(n)节的可能性等于K(n)+K(n-1)
 「因为第n节楼梯只能由第 n-1 楼梯或者 n-2 楼梯完成，就是这两种情况的和」
@@ -32,21 +48,20 @@ result[x][y] = Math.min(grid[x][y] + result[x + 1][y], grid[x][y] + result[x][y 
 已知0或者1层时的结果都是1，循环向上求解，最终得到第n层结果
 
 这两种解法都需要一个辅助数组来记录求过的某层，因为求解第n层结果的时候会被计算多次，比如欲求第 n 节必先求 n-1 和 **n-2**层，欲求第 n-1 节必先求 **n-2** 和 n-3。这里**n-2**被计算了多次，记录可以避免多次重复计算。
-### [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)
+### [12. Integer to Roman](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Integer2Roman.java)
 整数转罗马数字
 因为罗马数字最多只有四位，我这里把每一位分类讨论的。每一位（个十百千）分别转成罗马数字再拼起来
-
-### [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+### [11. Container With Most Water](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ContainerWithMostWater.java)
 从最大的底长入手，即当容器的底等于数组的长度时，则容器的盛水量为较短边的长乘底
 设定左右两个指针，分别指向左右两个极限值，由于底长已经是最大，面积主要受短边影响
 每次移动短边的指针，边移动边比较总容量，最后记录即可，直到两指针相遇停止。
 让人疑惑的是为什么这种算法下不会错过最佳指针地点（就是以这两个指针为左右的时候面积比其他情况都大），假设最大值的左右指针的位置是 x,y。
 假设左指针先移动到x，这时右指针必然在y + a(a > 0)的位置「如果右指针在y - a 的位置说明是右指针先到最佳地点，与假设不符；如果右指针在y的位置说明没有错过最佳地点，这两个点的面积会被比较到」这时要错过只会是 x 的长度小于 y + a 的长度才会移动左指针造成错过的情况，但是这样的话 x————y 的面积一定小于 x————(y+a)的又与假设矛盾。
 假设右指针先移动到y的推理过程类似，所以不会错过最佳指针地点。
-### [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
+### [58. Length of Last Word](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LengthOfLastWord.java)
 我先 trim 了一下去除末尾空格，
 后序遍历字符串，如果遇到空格就跳出循环，边遍历边计数
-### [146. LRU Cache](https://leetcode.com/problems/lru-cache/)
+### [146. LRU Cache](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LRUCache.java)
 制作一个LRU缓存，思路是制造一个双向链表。
 - 查找的时候顺序查找，如果找到了，就把它提到首位来
 - 插入的时候先查一下是否已经有这个key
