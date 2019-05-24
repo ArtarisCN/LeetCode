@@ -12,6 +12,11 @@
 >
 > macOS 10.14.4
 
+### [279. Perfect Squares](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PerfectSquares.java)
+动态规划问题，思路如下：
+如果一个数已经是完美平方数，则他的分解情况是1；
+如果一个数不是完美平方数，则找到他能开的最大完美平方数「如12能开的最大完美平方数是9，既3」
+使用一个数组记录每个数的完美平方数的分解情况，自底向上计算，如果一个数属于情况一，直接把分解情况写为1，如果属于情况二，就遍历一遍找到最大的完美平方数的所有分解情况，找到最小的值即可。
 ### [343. Integer Break](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IntegerBreak.java)
 还是动态规划的题目（其实并不是T_T）
 **先说动态规划的方法：用 Break(n) 代表 n 的最大分解。**

@@ -15,9 +15,9 @@ class MoveZeroes {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        int[] nums = new int[]{4, 2, 4, 0, 0, 3, 0, 5, 1, 0};
+        int[] nums = new int[]{0,0};
 
-        moveZeroes(nums);
+        moveZeroes2(nums);
 
         for (int num : nums) {
             System.out.print(String.valueOf(num) + " ");
