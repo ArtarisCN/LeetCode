@@ -12,6 +12,16 @@
 >
 > macOS 10.14.4
 
+### [16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
+我的解法基本和[15. 3Sum](https://github.com/ArtarisCN/LeetCode#15-3sum)类似。只是多使用了一个变量来计算差值，每次比较的是当前差值和之前的差值的大小。
+### [69. Sqrt(x)](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Sqrt_x_.java)
+看似二分查找法，使用趋紧的方式来查找，从 `x/2 + 1` 至 0 开始找，小了就缩左边界，大了就缩右边界。
+要注意的是
+1. 如果左右两个边界差值为1 的时候就可以返回了，以免陷入死循环（因为取中间值每次都不会再缩小边界了）
+2. 最后应该返回左边界，因为题目要求的答案是向下取整
+
+**数学方法**
+[牛顿逼近法](https://www.cnblogs.com/AnnieKim/archive/2013/04/18/3028607.html)了解一下
 ### [279. Perfect Squares](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PerfectSquares.java)
 动态规划问题，思路如下：
 如果一个数已经是完美平方数，则他的分解情况是1；
