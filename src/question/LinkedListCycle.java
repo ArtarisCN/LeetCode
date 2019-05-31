@@ -30,11 +30,9 @@ class LinkedListCycle {
         }
 
         ListNode node1 = head,node2 = head.next;
-
         if(head.next == head){
             return true;
         }
-
         while (node1 != null && node2 != null){
             if(node1 == node2){
                 return true;
@@ -47,7 +45,6 @@ class LinkedListCycle {
                 node2 = node2.next.next;
             }
         }
-
         return false;
     }
 }

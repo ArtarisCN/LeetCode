@@ -23,13 +23,7 @@ class ClimbingStairs {
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
     }
 
-    public static int climbStairs(int n) {
-        int[] climbMap = new int[n];
-        for (int i = 0; i < n; i++) {
-            climbMap[i] = -1;
-        }
-        return calculateStair(n, climbMap);
-    }
+
 
     public static int climbStairs2(int n) {
         int[] climbMap = new int[n + 1];
@@ -54,6 +48,14 @@ class ClimbingStairs {
             next = result;
         }
         return result;
+    }
+
+    public static int climbStairs(int n) {
+        int[] climbMap = new int[n];
+        for (int i = 0; i < n; i++) {
+            climbMap[i] = -1;
+        }
+        return calculateStair(n, climbMap);
     }
 
     public static int calculateStair(int stair, int[] memo) {
