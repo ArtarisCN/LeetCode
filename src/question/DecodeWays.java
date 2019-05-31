@@ -6,7 +6,7 @@ package question;
  * 2019.05.31.10:50
  * <p>
  * 91. Decode Ways
- * https://leetcode-cn.com/problems/decode-ways/
+ * https://leetcode.com/problems/decode-ways/
  *
  * @author : artairs
  */
