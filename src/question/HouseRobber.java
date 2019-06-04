@@ -42,7 +42,7 @@ class HouseRobber {
             return 0;
         }
 
-        if (memo[index] < 0) {
+        if (memo[index] < 0) {Unique Paths
             memo[index] = Math.max(robWithCache(nums, index - 1, memo), robWithCache(nums, index - 2, memo) + nums[index]);
         }
         return memo[index];

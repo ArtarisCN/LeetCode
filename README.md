@@ -12,7 +12,48 @@
 >
 > macOS 10.14.4
 
-### [16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
+
+### [198. House Robber](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/HouseRobber.java)
+抢劫，从末尾往前看，每一间房子只有抢和不抢两种选项。如果抢了 x 号房间，则不能抢x - 1 号房间，则状态转移方程为：
+
+```
+maxRobValue[n] = max(maxRobValue[n - 1],maxRobValue[n - 2] + value[n])
+```
+
+依照状态转移方程自底向上或者递归都可以解决
+
+### [62. Unique Paths](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniquePaths.java)
+构建从左上角到右下角的所有路径，倒着递推，每个格子的路径数等于左边格子的路径数加上面格子的路径数，则状态转移方程为：
+
+```
+result(n, n) = result(n - 1, n) +result(n, n -1)
+```
+
+计算的时候注意边界条件判断就行了
+
+
+### [63. Unique Paths II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniquePathsII.java)
+和上面的那道题类似，多了一个障碍物。状态转移方程和上面类似，多了两个判断：
+* 左上角和右下角不能是障碍物
+* 如果一个格子的左边或者右边是障碍物，不计数
+
+### [91. Decode Ways](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/DecodeWays.java)
+也是一道动态规划的问题，逆推，一个数的分解可以减去两个数或者一个数，则状态转移方程为：
+
+```
+result(n) = result(n - 1) +result(n - 2)
+```
+
+不过这两个数不一定都合法，
+- 剪掉的一位数必须在1 - 9为合法
+- 剪掉的一位数必须在10 - 26为合法
+
+计算次数的时候加一下判断
+
+### [141. Linked List Cycle](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LinkedListCycle.java)
+快慢指针的思路求解是否有环形链表的方法。
+设置两个指针，一个每次走一步，一个每次走两步，如果存在环形链表，那么这两个指针的结果都是在环上绕圈子。快指针一定会在这个圈子上追上慢指针，也注定不会错过一定会有这两个指针相等的时候。
+### [16. 3Sum Closest](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ThreeSumClosest.java)
 我的解法基本和[15. 3Sum](https://github.com/ArtarisCN/LeetCode#15-3sum)类似。只是多使用了一个变量来计算差值，每次比较的是当前差值和之前的差值的大小。
 ### [69. Sqrt(x)](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Sqrt_x_.java)
 看似二分查找法，使用趋紧的方式来查找，从 `x/2 + 1` 至 0 开始找，小了就缩左边界，大了就缩右边界。
@@ -21,6 +62,7 @@
 2. 最后应该返回左边界，因为题目要求的答案是向下取整
 
 **数学方法**
+
 [牛顿逼近法](https://www.cnblogs.com/AnnieKim/archive/2013/04/18/3028607.html)了解一下
 ### [279. Perfect Squares](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PerfectSquares.java)
 动态规划问题，思路如下：
@@ -40,7 +82,9 @@
 所以求 Break(n) 就把 [1,n-1]...[n/2,n - n/2]的所有情况都考虑完就行了，注意保存缓存避免多次计算。
 **再说说简单的方法**
 由均值不等式(n个数的算术平均数大于等于它们的几何平均数)：
+
 ![](http://img.artaris.cn//blog/img/Jietu20190524-120525.png)
+
 得：当把输入的n拆分成几个相等的数时它们的积最大。
 那么问题来了，拆分成几个呢？
 为了方便使用导数，我们先假设我们可以把n拆分成实数。那么设每一个数为x,则一共有n/x个数。
