@@ -31,7 +31,6 @@ result(n, n) = result(n - 1, n) +result(n, n -1)
 
 计算的时候注意边界条件判断就行了
 
-
 ### [63. Unique Paths II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniquePathsII.java)
 和上面的那道题类似，多了一个障碍物。状态转移方程和上面类似，多了两个判断：
 * 左上角和右下角不能是障碍物
