@@ -1,6 +1,7 @@
 package question;
 
 import model.ListNode;
+import util.PrintUtils;
 
 import static util.QuestionUtils.buildLinkedList;
 
@@ -20,9 +21,9 @@ class ReverseLinkedList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-//        PrintUtils.printfLinkedList(reverseList(buildLinkedList(new int[]{1,2,3,4,5})));
+        PrintUtils.printfLinkedList(reverseList(buildLinkedList(new int[]{1,2,3,4,5})));
 
-        reversePrintList(buildLinkedList(new int[]{1,2,3,4,5}));
+//        reversePrintList(buildLinkedList(new int[]{1,2,3,4,5}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

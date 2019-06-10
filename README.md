@@ -12,6 +12,13 @@
 >
 > macOS 10.14.4
 
+### [143. Reorder List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RReorderList.java)
+
+重排链表，具体什么规则看看原题，我的思路是先找到中间节点，断链，把后部分链表反转，然后你一我一的重新串起来。边界条件都写在代码里了。
+
+* 找到中间节点：快慢指针
+* 链表反转：[206. Reverse Linked List](https://github.com/ArtarisCN/LeetCode#15-3sum)
+
 ### [61. Rotate List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RotateList.java)
 旋转链表，这个题有点技巧，首先记一次链表的长度，并用所给的 K 对 链表长度取余，如果余数等于0，直接返回原 head，这样就保证了旋转的数一定在链表长度之内。
 
@@ -85,6 +92,17 @@ result(n) = result(n - 1) +result(n - 2)
 如果一个数已经是完美平方数，则他的分解情况是1；
 如果一个数不是完美平方数，则找到他能开的最大完美平方数「如12能开的最大完美平方数是9，既3」
 使用一个数组记录每个数的完美平方数的分解情况，自底向上计算，如果一个数属于情况一，直接把分解情况写为1，如果属于情况二，就遍历一遍找到最大的完美平方数的所有分解情况，找到最小的值即可。
+
+### [206. Reverse Linked List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IReverseLinkedList.java)
+
+一道考验链表微操的题，每次需要记录三个点，当前节点，当前节点的前一个节点，当前节点的后一个节点。
+每次重新串的顺序是：
+- 先记录一下当前节点的后一个节点
+- 当前节点的next = 当前节点的前一个节点
+- 当前节点的前一个节点 = 当前节点
+- 当前节点的后一个节点 = 当前节点的后一个节点.next
+- 当前节点 = 当前节点的后一个节点
+
 ### [343. Integer Break](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IntegerBreak.java)
 还是动态规划的题目（其实并不是T_T）
 **先说动态规划的方法：用 Break(n) 代表 n 的最大分解。**
