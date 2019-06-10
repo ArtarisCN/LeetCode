@@ -12,7 +12,14 @@
 >
 > macOS 10.14.4
 
+### [328. Odd Even Linked List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/OddEvenLinkedList.java)
+同样是一道「穿针引线」的题。
+使用两个节点，遍历一次链表，奇数位的接在第一个节点之后，偶数位接在第二个节点之后。最后把这两个节点串起来。
 
+别忘了在偶数头节点不为空「只有一个节点传进来的时候」设置偶数末尾节点的 next = null
+### [86. Partition List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PartitionList.java)
+对链表进行分隔，使得所有小于 x 的节点都在大于或等于 x 的节点之前。
+使用两个节点，遍历一次链表，小于给定数据的接在第一个节点之后，否则接在第二个节点之后。最后把这两个节点串起来。想通了还是挺简单的，最开始我想用两个节点判断大小然后交换，想歪了。
 ### [198. House Robber](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/HouseRobber.java)
 抢劫，从末尾往前看，每一间房子只有抢和不抢两种选项。如果抢了 x 号房间，则不能抢x - 1 号房间，则状态转移方程为：
 
@@ -30,6 +37,7 @@ result(n, n) = result(n - 1, n) +result(n, n -1)
 ```
 
 计算的时候注意边界条件判断就行了
+
 
 ### [63. Unique Paths II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniquePathsII.java)
 和上面的那道题类似，多了一个障碍物。状态转移方程和上面类似，多了两个判断：
