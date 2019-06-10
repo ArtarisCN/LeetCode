@@ -12,6 +12,9 @@
 >
 > macOS 10.14.4
 
+### [24. Swap Nodes in Pairs](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SwapNodesInPairs.java)
+两两交换节点，首先设立一个虚拟头节点会让处理头节点的时候非常简单，然后就是设置三个节点，两个是要交换的节点，另一个是他们之前的那个节点。
+交换了以后把这三个节点都向后推，然后一直循环到结束就行了，最后把虚拟头节点的next返回回去。
 ### [328. Odd Even Linked List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/OddEvenLinkedList.java)
 同样是一道「穿针引线」的题。
 使用两个节点，遍历一次链表，奇数位的接在第一个节点之后，偶数位接在第二个节点之后。最后把这两个节点串起来。
