@@ -12,10 +12,14 @@
 >
 > macOS 10.14.4
 
+### [237. Delete Node in a Linked List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/DeleteNodeInALinkedList.java)
+
+开始我没理解，只给一个节点怎么删除，又不知道前驱，没法指向要被删的后一个节点。
+看了解析就是把后面的值赋给要被删的节点，然后把它后一个节点删了「后一个节点：我做错了什么」坑爹呀～
+掌握一种思路：可以更改赋值而不是对节点这个对象处理。
+
 ### [82. Remove Duplicates from Sorted List II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RemoveDuplicatesFromSortedListII.java)
-
-删除链表中的重复节点，一旦有重复的就全部删除，这个题的关键点是设立一个虚拟头节点。有了虚拟头节点处理起来方便很多
-
+删除链表中的重复节点，一旦有重复的就全部删除，这个题的关键点是设立一个虚拟头节点。有了虚拟头节点处理起来方便很多。
 ### [143. Reorder List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReorderList.java)
 
 重排链表，具体什么规则看看原题，我的思路是先找到中间节点，断链，把后部分链表反转，然后你一我一的重新串起来。边界条件都写在代码里了。

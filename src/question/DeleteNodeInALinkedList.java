@@ -27,22 +27,8 @@ class DeleteNodeInALinkedList {
     }
 
     public static void deleteNode(ListNode node) {
-
-        if(head.val == node.val){
-            head = head.next;
-            return;
-        }
-
-        ListNode currentNode = head.next,preNode = head;
-
-        while (currentNode != null){
-            if(currentNode.val == node.val){
-                preNode.next = currentNode.next;
-                return;
-            }
-            currentNode = currentNode.next;
-        }
-
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
 }
