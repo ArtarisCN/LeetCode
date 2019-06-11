@@ -12,6 +12,10 @@
 >
 > macOS 10.14.4
 
+### [445. Add Two Numbers II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/AddTwoNumbersII.java)
+
+正向累加两个链表，我用了个栈，轻轻松松就完成了任务，并且没有使用题目中说的逆向反转链表，呵呵。「其实本质差不多」
+
 ### [237. Delete Node in a Linked List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/DeleteNodeInALinkedList.java)
 
 开始我没理解，只给一个节点怎么删除，又不知道前驱，没法指向要被删的后一个节点。
