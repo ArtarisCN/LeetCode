@@ -22,13 +22,15 @@ public class PrintUtils {
     public static void printfLinkedList(ListNode node) {
         if (node == null) {
             System.out.println("null");
+            return;
         }
 
-        while (node != null) {
-
-            System.out.println(node.val);
+        while (node.next != null) {
+            System.out.print(node.val + "->");
             node = node.next;
         }
+
+        System.out.println(node.val);
     }
 
     public static void printfArray(int[] array) {
