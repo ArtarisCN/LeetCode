@@ -13,20 +13,26 @@
 > macOS 10.14.4
 >
 
-### [25. Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
+### [148. Sort List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SortList.java)
+
+对一个链表排序。
+较快的排序算法有：快排、堆排、归并
+因为是单向链表，快排和堆排都不太适用。这里选择归并排序。
+归并排序的思想就是先拆再和，拆到只有唯一一个节点为止。这里依然适用快慢指针来寻找中点，前链表断链，递归归并来实现的。
+
+### [25. Reverse Nodes in k-Group](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ReverseNodesInKGroup.java)
 按照K组反转链表，是之前反转链表的变体，使用两层循环，一层走总的，另一层，一组一组的反转。
 需要注意的点
 - 虚拟头节点！虚拟头节点！虚拟头节点！有一个虚拟头节点判断起来简单的多
 - 每次反转一组之前先使用一个步骤找到这次需要反转的首尾，然后开始反转
 - 反转的时候需要记录前一组的最后一个，后一组的第一个
-- 反转完毕以后把这一组的第一个当成之后下一组的第一个，继续反转下一组
+- 反转完毕以后把这一组的第一个当成之后下一组的第一个「因为已经反转了，刚才这一组的第一个已经变成最后一个了」，继续反转下一组
 - 如果记录当前链表的个数不足所给组的个数，不反转直接返回
 - 反转链表请看[206. Reverse Linked List](https://github.com/ArtarisCN/LeetCode#206-reverse-linked-list)
 
 ### [109. Convert Sorted List to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedList2BinarySearchTree.java)
 
-和108很想，思路使用快慢指针来寻找链表的中点，然后把中点当根节点，前面的断链，作为左子树，后面的作为右子树。
-
+和 [108. Convert Sorted Array to Binary Search Tree](https://github.com/ArtarisCN/LeetCode#108-convert-sorted-array-to-binary-search-tree)很像，思路是使用快慢指针来寻找链表的中点，然后把中点当根节点，前面的断链，作为左子树，后面的作为右子树，递归造树就行了。
 ### [108. Convert Sorted Array to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedArrayToBinarySearchTree.java)
 搜索树
 - 当前节点都比左子树大，都比右子树的小；
