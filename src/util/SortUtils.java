@@ -28,26 +28,20 @@ public class SortUtils {
         }
 
         int t = num[start];
-
         int i = start, j = end;
-
         while (j != i) {
-
             while (j > i && num[j] >= t) {
                 j--;
             }
-
             while (j > i && num[i] <= t) {
                 i++;
             }
-
             if (i < j) {
                 int temp = num[j];
                 num[j] = num[i];
                 num[i] = temp;
             }
         }
-
         int temp = num[i];
         num[i] = num[start];
         num[start] = temp;
@@ -118,7 +112,6 @@ public class SortUtils {
     private static void mergeArray(int[] num, int start, int mid, int end, int[] temp) {
         int i = start, j = mid + 1;
         int k = 0;
-
         while (i <= mid && j <= end) {
             if (num[i] < num[j])
                 temp[k++] = num[i++];
@@ -127,13 +120,10 @@ public class SortUtils {
             else
                 temp[k++] = num[j++];
         }
-
         while (i <= mid)
             temp[k++] = num[i++];
-
         while (j <= end)
             temp[k++] = num[j++];
-
         for (i = 0; i < k; i++)
             num[start + i] = temp[i];
     }

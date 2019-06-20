@@ -11,6 +11,53 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 >
 > macOS 10.14.4
+>
+
+### [109. Convert Sorted List to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedList2BinarySearchTree.java)
+
+和109很想，思路使用快慢指针来寻找链表的中点，然后把中点当根节点，前面的断链，作为左子树，后面的作为右子树。
+
+### [108. Convert Sorted Array to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedArrayToBinarySearchTree.java)
+搜索树
+- 当前节点都比左子树大，都比右子树的小；
+- 搜索树的子树还是搜索树；
+
+将一个排序数组转成搜索树，因为是排好序的，所以中间的的那个值就是根节点。
+然后根节点左边的所有值就是他的左子树，依然是个搜索树。
+这里就可以用到递归继续递归左边半个数组继续生成他的左子树，右子树同理。
+注意处理一下当数组个数不小于三的情况。
+
+### [104. Maximum Depth of Binary Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MaximumDepthOfBinaryTree.java)
+
+依然递归查找，设置一个带当前节点深度的递归函数，然后返回Max(左子树.当前深度 + 1 ,右子树.当前深度 + 1)
+当然如果当前节点不存在，然后返回 - 1 就行了。
+
+### [101. Symmetric Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SymmetricTree.java)
+
+判断两颗树是否是对称的。
+对称的标准是：
+* 你有(子树)我也有(子树)；
+* 你没有我也没有；
+* 我和你(根节点)相等；
+* 我的左和你的右对称；
+* 我的右和你的左对称；
+把握好这几个条件，递归的找到所有该对称的子树就行了
+
+### [100. Same Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SameTree.java)
+
+两棵树相等的情况是左子树完全等于右子树，所以递归的判断就好。
+`p.left == q.left &&  p.right == q.right  &&  p.root == q.root`
+当递归到叶子节点的递归结束
+
+### [83. Remove Duplicates from Sorted List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/RemoveDuplicatesFromSortedList.java)
+
+依序遍历链表
+- 如果当前的值比前一个值大，则替换上一个值；
+- 如果当前值等于前一个值，则把当前节点从链表踢掉；
+
+### [111. Minimum Depth of Binary Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MinimumDepthOfBinaryTree.java)
+
+利用递归查找小深度，注意的就是每个深度要+1「根节点的度」
 
 ### [445. Add Two Numbers II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/AddTwoNumbersII.java)
 
