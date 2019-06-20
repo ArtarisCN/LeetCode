@@ -13,9 +13,19 @@
 > macOS 10.14.4
 >
 
+### [25. Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
+按照K组反转链表，是之前反转链表的变体，使用两层循环，一层走总的，另一层，一组一组的反转。
+需要注意的点
+- 虚拟头节点！虚拟头节点！虚拟头节点！有一个虚拟头节点判断起来简单的多
+- 每次反转一组之前先使用一个步骤找到这次需要反转的首尾，然后开始反转
+- 反转的时候需要记录前一组的最后一个，后一组的第一个
+- 反转完毕以后把这一组的第一个当成之后下一组的第一个，继续反转下一组
+- 如果记录当前链表的个数不足所给组的个数，不反转直接返回
+- 反转链表请看[206. Reverse Linked List](https://github.com/ArtarisCN/LeetCode#206-reverse-linked-list)
+
 ### [109. Convert Sorted List to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedList2BinarySearchTree.java)
 
-和109很想，思路使用快慢指针来寻找链表的中点，然后把中点当根节点，前面的断链，作为左子树，后面的作为右子树。
+和108很想，思路使用快慢指针来寻找链表的中点，然后把中点当根节点，前面的断链，作为左子树，后面的作为右子树。
 
 ### [108. Convert Sorted Array to Binary Search Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ConvertSortedArrayToBinarySearchTree.java)
 搜索树
@@ -431,8 +441,10 @@ nums1[index --] = i >= 0 && nums1[i] > nums2[j]?nums1[i --]:nums2[j--];
 
 ### [164. Maximum Gap](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MaximumGap.java)
 要求找到排序之后的相差最大的两个值，这个题要求空间时间复杂度都是线性的，其实是考排序算法的。
+
 ~~偷鸡法：Arrays.sort(nums)~~
-要求时间空间复杂度是线形的，这里使用基数排序来实现.
+
+要求时间空间复杂度是线形的，这里使用[基数排序](https://github.com/ArtarisCN/LeetCode/blob/master/src/util/SortUtils.java)来实现.
 
 ### [523. Continuous Subarray Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ContinuousSubarraySum.java)
 这道题是要求找出是否有相邻的几个数的和正好是给定数据的倍数，思路是线性相加，每次对给定倍数取余数，并放到字典里，下次相加是如果字典里有这个余数，说明存在这样的数，用到了下面的原理：
