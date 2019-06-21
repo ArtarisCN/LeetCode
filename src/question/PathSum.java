@@ -1,6 +1,5 @@
 package question;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import model.TreeNode;
@@ -28,12 +27,18 @@ class PathSum {
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
     }
 
-
-
-    public static boolean hasPathSum(TreeNode root, int sum) {
-        List<Integer> sumList = new ArrayList<>();
-        findNode(sumList,root);
-        return sumList.contains(sum);
+    public static boolean hasPathSum2(TreeNode root, int sum) {
+        if(root == null){
+            return false;
+        }else  if(root.right ==null && root.left == null){
+            return sum == root.val;
+        } else if(root.right ==null ){
+            return hasPathSum2(root.left,sum - root.val);
+        } else if(root.left == null){
+            return hasPathSum2(root.right,sum - root.val);
+        } else {
+            return hasPathSum2(root.left,sum - root.val) || hasPathSum2(root.right,sum - root.val);
+        }
     }
 
     public static void findNode(List<Integer> sum,TreeNode node){

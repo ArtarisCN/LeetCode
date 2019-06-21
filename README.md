@@ -13,6 +13,21 @@
 > macOS 10.14.4
 >
 
+### [112.Path Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PathSum.java)
+
+依照题目所说，当且仅当根节点到叶子节点的路径之和才算数，所以必须找到叶子节点才行。
+递归查找：
+- 查到该节点为空，说明它不是叶子节点，返回false
+- 查到该节点左右节点都是空，说明是叶子节点，返回「剩下的和」== 当前节点的值
+- 查到该节点只有左/右子树，说明它不是叶子节点，但还有救，继续查它的左/右子树，并在查的时候用之前的和减去当前节点的值
+- 查到该节点膝下双全，说明它不是叶子节点，一定有救，继续查它的左右子树，和上面一样和减去当前节点的值，并且左右子树只要有一个符合就行，所以这里用 「||」或运算
+
+### [110. Balanced Binary Tree](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BalancedBinaryTree.java)
+
+判断一棵树是否是平衡二叉树：
+- 左子树和右子树的高度差不能超过1：所以需要有一个计算树的高度的函数
+- 左子树和右子树均为平衡二叉树：递归调用判断函数判断左右子树
+
 ### [148. Sort List](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SortList.java)
 
 对一个链表排序。
