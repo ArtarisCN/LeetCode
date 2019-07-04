@@ -13,6 +13,11 @@
 > macOS 10.14.4
 >
 
+
+### [94. Binary Tree Inorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreeInorderTraversal.java)
+
+同[144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode#144-binary-tree-preorder-traversal)，改换一下便利顺序就好了
+
 ### [144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreePreorderTraversal.java)
 先序遍历二叉树
 二叉树是啥我们都知道了，先序的序是指根的顺序，就是首先遍历根节点，再遍历左节点，再遍历右节点
@@ -24,7 +29,6 @@
 非递归法讲一下：设置一个数据结构Command：包含节点和操作，先将根节点压入栈，开始对栈进行遍历：如果是压入的节点，则弹出并且压入它的右->左->根节点「根节点的操作标记为待打印」「逆序的原因是出栈的顺序是反向的」，然后再对栈进行遍历，查看到栈顶为待打印的根节点，则打印根节点继续对栈进行遍历。
 
 这种方法的好处是直观可见，并且如果是改为其他序的遍历只需要改变入栈顺序即可。
-
 ### [71. Simplify Path](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SimplifyPath.java)
 简化不合规范的路径
 还是使用栈的思想，最开始使用String.split("/")来切割整个字符串，会把所有的"/"都吃掉，分成:

@@ -9,14 +9,14 @@ import model.TreeNode;
 /**
  * question
  * LeetCode
- * 2019.07.04.14:21
- * <p>
- * 94. Binary Tree Inorder Traversal
- * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+ * 2019.07.04.14:28
+ *
+ * 145. Binary Tree Postorder Traversal
+ * https://leetcode.com/problems/binary-tree-postorder-traversal/
  *
  * @author : artairs
  */
-class BinaryTreeInorderTraversal {
+class BinaryTreePostorderTraversal {
 
     public static void main(String[] args) {
         //获取开始时间
@@ -29,14 +29,14 @@ class BinaryTreeInorderTraversal {
     }
 
     private List<Integer> result = new ArrayList<>();
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) {
             return result;
         }
 
-        inorderTraversal(root.left);
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
         result.add(root.val);
-        inorderTraversal(root.right);
         return result;
     }
 
@@ -46,7 +46,7 @@ class BinaryTreeInorderTraversal {
      * @param root
      * @return
      */
-    public List<Integer> inorderTraversal2(TreeNode root) {
+    public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -57,10 +57,10 @@ class BinaryTreeInorderTraversal {
         while (!commands.empty()) {
             Command command = commands.pop();
             if (command.isPoped) {
+                commands.add(new Command(false, command.node));
                 if (command.node.right != null) {
                     commands.add(new Command(true, command.node.right));
                 }
-                commands.add(new Command(false, command.node));
                 if (command.node.left != null) {
                     commands.add(new Command(true, command.node.left));
                 }
@@ -81,4 +81,5 @@ class BinaryTreeInorderTraversal {
             this.node = node;
         }
     }
+
 }
