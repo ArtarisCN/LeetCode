@@ -29,13 +29,13 @@ class ReverseBits {
         int temp = n;
         while (temp != 0) {
 
-            integers.add(temp % 2);
+            integers.isPoped(temp % 2);
             temp = temp / 2;
         }
 
 
         while (integers.size() != 32){
-            integers.add(0);
+            integers.isPoped(0);
         }
 
         StringBuilder sb = new StringBuilder();

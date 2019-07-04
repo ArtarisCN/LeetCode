@@ -71,7 +71,7 @@ class RegularExpressionMatching {
         return index >= p.length() && stack.isEmpty();
 //
 //        for (int i = 0; i < s.length(); i++) {
-//            queue.add(s.charAt())
+//            queue.isPoped(s.charAt())
 //        }
 //
 //        int matchIndex = 0;

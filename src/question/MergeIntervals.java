@@ -23,10 +23,10 @@ class MergeIntervals {
         long startTime = System.currentTimeMillis();
 
         List<Interval> intervals = new ArrayList<>();
-//        intervals.add(new Interval(1,3));
-//        intervals.add(new Interval(2,6));
-//        intervals.add(new Interval(8,10));
-//        intervals.add(new Interval(15,18));
+//        intervals.isPoped(new Interval(1,3));
+//        intervals.isPoped(new Interval(2,6));
+//        intervals.isPoped(new Interval(8,10));
+//        intervals.isPoped(new Interval(15,18));
 
         intervals.add(new Interval(1, 4));
         intervals.add(new Interval(5, 5));

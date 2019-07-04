@@ -13,6 +13,43 @@
 > macOS 10.14.4
 >
 
+### [144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreePreorderTraversal.java)
+先序遍历二叉树
+二叉树是啥我们都知道了，先序的序是指根的顺序，就是首先遍历根节点，再遍历左节点，再遍历右节点
+这里提供两种方法：
+1. 递归法
+2. 非递归栈法
+
+递归法看代码可知。
+非递归法讲一下：设置一个数据结构Command：包含节点和操作，先将根节点压入栈，开始对栈进行遍历：如果是压入的节点，则弹出并且压入它的右->左->根节点「根节点的操作标记为待打印」「逆序的原因是出栈的顺序是反向的」，然后再对栈进行遍历，查看到栈顶为待打印的根节点，则打印根节点继续对栈进行遍历。
+
+这种方法的好处是直观可见，并且如果是改为其他序的遍历只需要改变入栈顺序即可。
+
+### [71. Simplify Path](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SimplifyPath.java)
+简化不合规范的路径
+还是使用栈的思想，最开始使用String.split("/")来切割整个字符串，会把所有的"/"都吃掉，分成:
+- 空字符串「连续两个//」
+- .
+- ..
+- 目录名称
+分别对这四种情况讨论，是入栈还是出栈。出栈的时候注意检查一下栈中是不是空的
+
+最后栈中从底到顶是从根开始的所有路径名，一次出栈然后insert到一个StringBuilder 的首位上就行了「因为是出栈顺序和打印顺序是相反的」
+
+### [150. Evaluate Reverse Polish Notation](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/EvaluateReversePolishNotation.java)
+
+逆波兰表达式，使用栈的思想解决问题。
+* 如果是四则运算，则弹出栈顶两个元素，计算再入栈等待下次运算
+* 如果是数字，则直接入栈，等待下次运算。
+
+如此变遍历变运算方法到最后即可
+
+### [123. Best Time to Buy and Sell Stock III](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BestTimeToBuyAndSellStockIII.java)
+
+括号匹配问题，使用栈的思想解决。
+对于做括号，做入栈处理，右括号则弹出当前栈顶元素，做匹配判断，如若匹配则出栈。继续匹配
+最后查看栈是否为空。
+
 ### [119.Pascal's Triangle II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PascalsTriangleII.java)
 这是118的变种，就是只求某一特定的行，还要求空间复杂度为 O(k) ，直接想到杨辉三角的数学定义——组合公式「初中的时候学习的两项式的多次方的展开公式」
 - 第 n 行的数据有 n+1 个
@@ -25,7 +62,6 @@
 
 ### [118.Pascal's Triangle](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PascalsTriangle.java)
 这个题没啥好讲的……按照杨辉三角的定义累加就行了。
-
 ### [112.Path Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PathSum.java)
 
 依照题目所说，当且仅当根节点到叶子节点的路径之和才算数，所以必须找到叶子节点才行。
@@ -372,6 +408,11 @@ b操作数取后五位，也可以理解成 b/32 取余数
 本质上是在模仿进位加法。
 ### [217. Contains Duplicate](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ContainsDuplicate.java)
 使用一个Set，每次存的时候看一下是否contains，有的话就返回false
+
+### [121. Best Time to Buy and Sell Stock](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BestTimeToBuyAndSellStock.java)
+给一组数据，其实就是找到顺序的最大差值，先持有第一个数，记录收益为0，向后遍历，如果后一个减去前一个数的差值比记录的收益大，则收益换成目前这个数的差值
+如果当前的数比持有的数更小，说明在此时入手更便宜，将手中的股票换成目前的。
+注意的点是先计算收益再看看要不要换手中的股票，如果换过手中的股票之后后面的收益并不如之前的收益，也不影响最后的结果：「因为收益已经计算过了，最后返回之前记录的最大的收益就行了」
 
 ### [122.Best Time to Buy and Sell Stock II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BestTimeToBuyAndSellStockII.java)
 
