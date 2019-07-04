@@ -13,6 +13,19 @@
 > macOS 10.14.4
 >
 
+### [119.Pascal's Triangle II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PascalsTriangleII.java)
+这是118的变种，就是只求某一特定的行，还要求空间复杂度为 O(k) ，直接想到杨辉三角的数学定义——组合公式「初中的时候学习的两项式的多次方的展开公式」
+- 第 n 行的数据有 n+1 个
+- 第 k 个数据为组合数 C(上角标k下角标n) = n!/(k! * (n - k)!)
+
+那有了公式就直接算就行了呗，问题又来了，题目中给的最大数为33，一阶乘妥妥的越界呀，那就只有优化一下公式
+> n!/k! = (n - k + 1) * (n - k + 2) * ... * (n)
+>
+提交还是越界。看题目的意思是 33 的结果是可以满足 int 的「最后返回值是个 List<Integer>」也就是运算最后结果是个 int 只是过程中越界了，再观察公式，是一阵乘然后一阵除，那我就一下乘再一下除一直保持中间过程数不至于太大就行了，但是中间除的过程中会不能整除有小数，所以把中间数声明成 float，一试，发现不通过，有不精确的情况，再把 float 改成 double ，一试，就行了……
+
+### [118.Pascal's Triangle](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PascalsTriangle.java)
+这个题没啥好讲的……按照杨辉三角的定义累加就行了。
+
 ### [112.Path Sum](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PathSum.java)
 
 依照题目所说，当且仅当根节点到叶子节点的路径之和才算数，所以必须找到叶子节点才行。

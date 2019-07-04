@@ -18,11 +18,36 @@ class ValidPalindrome {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        System.out.println(isPalindrome("1a2"));
+        System.out.println(isPalindrome2("A man, a plan, a canal: Panama"));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+    }
+
+    public static boolean isPalindrome2(String s) {
+        s = s.toUpperCase();
+        int start = 0,end = s.length() - 1;
+        boolean isPalindrome = true;
+        while (start < end){
+            while (invalid(s.charAt(start)) && start < end) {
+                start++;
+            }
+            while (invalid(s.charAt(end)) && start < end) {
+                end--;
+            }
+            if(s.charAt(start) != s.charAt(end) ){
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        return isPalindrome;
+    }
+
+    public static boolean invalid(char c){
+        return (c < 'A' || c > 'Z') && (c < '0' || c > '9');
     }
 
     public static boolean isPalindrome(String s) {

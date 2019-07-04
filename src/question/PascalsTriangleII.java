@@ -20,7 +20,7 @@ class PascalsTriangleII {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArrayList(getRow(0));
+        PrintUtils.printfArrayList(getRow2(13));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
@@ -43,5 +43,27 @@ class PascalsTriangleII {
         }
 
         return start;
+    }
+
+
+    public static List<Integer> getRow2(int rowIndex) {
+        List<Integer> result = new ArrayList<>(rowIndex + 1);
+        for (int i = 0; i <= rowIndex; i++) {
+            double temp = 1;
+
+            int x = i + 1,y = 1;
+            while (x <= rowIndex || y<= (rowIndex - i)){
+                if(x <= rowIndex) {
+                    temp *= x;
+                }
+                if(y<= (rowIndex - i)) {
+                    temp /= y;
+                }
+                x++;
+                y++;
+            }
+            result.add((int) temp);
+        }
+        return result;
     }
 }
