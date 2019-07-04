@@ -14,9 +14,21 @@
 >
 
 
+### [341. Flatten Nested List Iterator](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/FlattenNestedListIterator.java)
+
+遍历一个迭代器
+使用一个队列，尾部入，头部出。
+* 如果内部元素是队列，则构造一个新的该结构，在构造的时候它已经成为一个列表了，然后调用它提供的`next()`方法装入本队列的尾部即可
+* 如果内部元素是数字，则直接塞入本队列的尾部
+
+出队列的时候出头部元素即可
+
+### [145. Binary Tree Postorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreePostorderTraversal.java)
+
+同[144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode#144-binary-tree-preorder-traversal)，改换一下遍历顺序就好了
 ### [94. Binary Tree Inorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreeInorderTraversal.java)
 
-同[144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode#144-binary-tree-preorder-traversal)，改换一下便利顺序就好了
+同[144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode#144-binary-tree-preorder-traversal)，改换一下遍历顺序就好了
 
 ### [144. Binary Tree Preorder Traversal](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/BinaryTreePreorderTraversal.java)
 先序遍历二叉树
