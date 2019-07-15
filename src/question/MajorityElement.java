@@ -1,8 +1,8 @@
 package question;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * question
@@ -34,7 +34,7 @@ class MajorityElement {
 
     public static int majorityElement(int[] nums) {
 
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer,Integer> map = new TreeMap<>();
 
         for (int num : nums) {
             if(map.containsKey(num)){

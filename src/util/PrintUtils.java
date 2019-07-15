@@ -75,9 +75,10 @@ public class PrintUtils {
     public static <T> void printfArrayList(List<T> array) {
         if (array != null) {
             for (T i : array) {
-                System.out.println(i);
+                System.out.print(i + " ");
             }
         }
+        System.out.println();
     }
 
     public static void printCache(LRUCache cache) {

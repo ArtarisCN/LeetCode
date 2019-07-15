@@ -8,5 +8,7 @@ package delegate;
  * @author : artairs
  */
 public interface Sales {
-    void sell();
+    void sell(int money);
+
+    void look();
 }

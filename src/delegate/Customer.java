@@ -16,11 +16,12 @@ public class Customer {
         //dynamic
         Sales delegate = new Owner();
         Sales proxy = (Sales) new SalesInvocationHandler().bind(delegate);
-        proxy.sell();
+        proxy.sell(20);
+        proxy.look();
 
         //static
-        Sales sales = new Agents();
-        sales.sell();
+//        Sales sales = new Agents();
+//        sales.sell();
     }
 
 

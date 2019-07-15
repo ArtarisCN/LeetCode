@@ -24,19 +24,12 @@ class ExcelSheetColumnNumber {
     }
 
     public static int titleToNumber(String s) {
-
         int decimal = 26;
-
         char[] chars = s.toCharArray();
-
         int result = 0;
-
         for (int i = chars.length - 1; i >= 0; i--) {
-
             result += Math.pow(decimal, chars.length - i - 1) * (chars[i] - 'A' + 1);
-
         }
-
         return result;
     }
 

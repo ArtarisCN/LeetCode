@@ -17,7 +17,7 @@ class ExcelSheetColumnTitle {
         long startTime = System.currentTimeMillis();
 
 
-        System.out.println(convertToTitle(701));
+        System.out.println(convertToTitle(28));
 
 
         //获取结束时间
@@ -26,22 +26,20 @@ class ExcelSheetColumnTitle {
     }
 
     public static String convertToTitle(int n) {
-
         StringBuilder sb = new StringBuilder();
-        while (n > 26){
+        while (n > 0){
             int num = n % 26;
             if(num == 0){
-                sb.append("Z");
+                sb.insert(0,"Z");
+                n -= 26;
             } else {
                 char x = (char) (num + 'A' - 1);
-                sb.append(String.valueOf(x));
+                sb.insert(0,x);
+                n -= n % 26;
             }
             n /= 26;
         }
-        char x =(char)(n + 'A' - 1);
-        sb.append(String.valueOf(x));
-
-        return sb.reverse().toString();
+        return sb.toString();
     }
 
 }

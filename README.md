@@ -3,16 +3,46 @@
 项目环境：
 
 > IntelliJ IDEA 2018.2.8 (Community Edition)
->
 > Build #IC-182.5262.2, built on March 28, 2019
->
 > JRE: 1.8.0_152-release-1248-b22 x86_64
->
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
->
 > macOS 10.14.4
->
 
+### [5. Longest Palindromic Substring](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LongestPalindromicSubstring.java)
+
+艰难理解的一道题，一杯茶一支烟，脑子不转弯一题一整天。
+题干很简单，就是找一个字符串中的最长回文数据。
+- 最简单的方法：暴力搜解法
+    - 两层for循环一套，填满一个 length * length 的表格，代表从 nums[i]——num[j] 是否是回文及其长度，一提交，稳稳的超时。
+- 动态规划法：nums[i][j]是否是一个回文？
+    - i == j : 是
+    - i == j - 1 : 看s[i] == s[j] ?
+    - i < j - 1 : s[i] == s[j] && num[i + 1][j - 1]
+    - 每检测出一个是回文字符串的 nums[i][j] ，就和当前最长的回文字符串比较一下长度，后面不再赘述。
+- 中心检测法
+    - 对 num 以 num[i] 为中心进行遍历
+    - 这里需要注意，要以两个中心，即 num[i] 和 num[i] == num[i + 1]，分别对奇偶两种情况，
+    - 确定中心之后向两边展开，得到该中心的长度
+    - 得到长度之后和当前最长的回文字符串比较一下长度，后面不再赘述。
+- Manacher 算法
+    - 理解了半天，首先使用'#'填满每个字符中间，为了解决奇偶数的问题，在两端分别插入 '$' 和 '@'，两个不可能在字符串中出现的字符
+    - 使用一个辅助数组，用来记录以处理过的字符串的每个字符为中心的回文的半径
+    - 使用两个变量，1⃣️记录当前遍历到的最远回文的右边界（这里最远的不一定是最长的那个回文），有可能我在填充辅助数组只计算到了6，但是以6为圆心的回文已经抵达了10，这个右边界即是10，2⃣️另一个变量用来记录其圆心6
+    - 开始计算这个辅助数组的值
+        - 这个辅助数组的位置超过了之前记录的右边界，那么先让它等于0，然后让它以自我为中心进行遍历，最后结果记录下来
+        - 这个辅助数组的位置没有超过之前记录的右边界，那么先让它等于之前记录的关于最长右边界的圆心对称的辅助数组的值，在让它以自我为中心，之后的值开始进行遍历，最后结果记录下来
+    - 计算完这个辅助数组的值之后，看一下这个最远回文的右边界有没有比之前的最远回文的右边界远，远的话更新一下。
+
+### [167. Two Sum II - Input array is sorted](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/TwoSumIIInputArrayIsSorted.java)
+
+给定一个排序好的列表和一个目标值，到找两个数是这个目标值的和
+使用两个指针，从两头往中间挤，和小了就动左边的指针，大了就动右边的指针
+
+### [160. Intersection of Two Linked Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Intersection OfTwoLinkedLists.java)
+
+查找两个相交链表的首个相交节点
+因为相交的两个链表在某处相交之后，后面就完全一样了。所以找到他们相同长度的地方「所以需要计算两个链表的长度」，开始同时向后推，相同节点的地方就是起始相交的地方
+另一个方法是用一个 Set 来存储所有的节点，看看是不是有重复的。
 
 ### [341. Flatten Nested List Iterator](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/FlattenNestedListIterator.java)
 
