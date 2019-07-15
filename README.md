@@ -8,6 +8,25 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+### [895. Maximum Frequency Stack](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MaximumFrequencyStack.java)
+最大频率栈
+使用三个关键参数：
+- 一个map<int key,int times>存储所有出现数据的结构
+- 一个map<int times, Stack<int> stack> [出现次数]-[出现顺序栈]，即出现了times次的数的栈，要注意这里如果一个数出现了n次，那么在1-n这些栈中都会出现这个数「而不是只在n这个栈中存在」例子：put 4 次 23进来，第一个map结构为<23,4>，第二个结构为<1,[23]>,<2,[23]>,<3,[23]>,<4,[23]>
+- 使用一个数字记录最多的那个次数，即对应[出现次数]-[出现顺序栈]的key
+push:
+- 第一个map更新出现次数
+- 取出该数的出现的次数
+- 将次数+1，在第二个找到这次对应的出现次数栈
+- 并放入新的次数栈「这里使用栈符合所有出现这个次数的数先入先出的规则」
+- 最后看看是否需要更新出现最多的次数
+pop：
+- 使用出现最多的次数找到对应的栈
+- 弹出栈顶元素
+- 第一个map更新出现次数「-1」
+- 查看现在出现次数最多的栈是否已经没有元素了，如果没有元素了，需要更新出现最多的次数「-1」
+
+
 ### [5. Longest Palindromic Substring](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LongestPalindromicSubstring.java)
 
 艰难理解的一道题，一杯茶一支烟，脑子不转弯一题一整天。
