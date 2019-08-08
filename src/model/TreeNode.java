@@ -17,6 +17,9 @@ public class TreeNode {
         val = x;
     }
 
+    public String getVal(){
+        return val == -1?"null":String.valueOf(val);
+    }
 
 
 }

@@ -8,6 +8,12 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+### [95. Unique Binary Search Trees II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniqueBinarySearchTreesII.java)
+
+和[96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode#96-unique-binary-search-trees)思路类似.
+这里使用一个`List<TreeNode> generateTree(int start, int end)`函数来生成从 start「=start」到 end「=end」的所有子树，还是利用递归的方法，先取一个节点为根节点，然后分别构建其左右子树
+构建其左右子树的时候依旧调用这个递归方法，左右的范围分别为：for(i:0 -> n-1){left =(start, i - 1) -> right(i + 1, end)},构建出来的两个子树循环遍历即可
+
 ### [96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniqueBinarySearchTrees.java)
 
 选取这一串有序数据中的一个作为根节点，则比它大的均为其右子树，比它小的均为其左子树，则选取这个节点的情况种数为 catalan[i] * catalan[n - i - 1]
