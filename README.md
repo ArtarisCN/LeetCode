@@ -8,6 +8,17 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+### [96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniqueBinarySearchTrees.java)
+
+选取这一串有序数据中的一个作为根节点，则比它大的均为其右子树，比它小的均为其左子树，则选取这个节点的情况种数为 catalan[i] * catalan[n - i - 1]
+所以依次选取每个节点作为根节点再将没中情况相加就得到了最后的结果
+状态转移方程 ：把 n = 0 时赋为1，因为空树也算一种二叉搜索树，那么 n = 1 时的情况可以看做是其左子树个数乘以右子树的个数，
+左右子树都是空树，所以1乘1还是1。那么 n = 2 时，由于1和2都可以为根，分别算出来，再把它们加起来即可。
+catalan[2] = catalan[0]*catalan[1] + catalan[1]*catalan[0]
+catalan[3] = catalan[0]*catalan[2] + catalan[1]*catalan[1] + catalan[2]*catalan[0]
+...
+catalan[n] = for(i:0 -> n-1){ catalan[i] * catalan[n - i - 1] }
+
 ### [895. Maximum Frequency Stack](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MaximumFrequencyStack.java)
 最大频率栈
 使用三个关键参数：

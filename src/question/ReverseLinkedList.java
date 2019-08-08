@@ -21,7 +21,9 @@ class ReverseLinkedList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(reverseList(buildLinkedList(new int[]{1,2,3,4,5})));
+        PrintUtils.printfLinkedList(reverseList2(buildLinkedList(new int[]{1, 2, 3, 4, 5})));
+        PrintUtils.printfLinkedList(reverseList2(null));
+        PrintUtils.printfLinkedList(reverseList2(buildLinkedList(new int[]{1})));
 
 //        reversePrintList(buildLinkedList(new int[]{1,2,3,4,5}));
 
@@ -36,27 +38,28 @@ class ReverseLinkedList {
             return head;
         }
 
-        ListNode temp, result = null;
-
-        ListNode x = head;
-
-        while (x.next != null) {
-
-            temp = result;
-
-            result = x;
-
-            x = x.next;
-
-            result.next = temp;
-
+        ListNode now, pre = null;
+        ListNode next = head;
+        while (next.next != null) {
+            now = pre;
+            pre = next;
+            next = next.next;
+            pre.next = now;
         }
+        next.next = pre;
+        pre = next;
+        return pre;
+    }
 
-        x.next = result;
-        result = x;
-
-
-        return result;
+    public static ListNode reverseList2(ListNode head) {
+        ListNode pre = null,now = head, next;
+        while (now != null) {
+            next = now.next;//0
+            now.next = pre;//1
+            pre = now;//2
+            now = next;//3
+        }
+        return pre;
     }
 
     public static void reversePrintList(ListNode head) {

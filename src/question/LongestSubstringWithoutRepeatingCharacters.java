@@ -1,10 +1,13 @@
 package question;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * question
  * LeetCode
  * 2019.04.29.14:17
- *
+ * <p>
  * 3. Longest Substring Without Repeating Characters
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  *
@@ -20,6 +23,22 @@ class LongestSubstringWithoutRepeatingCharacters {
         //获取结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
+        int i = 0, j = 0;
+        Set<Character> set = new HashSet<>();
+        int n = s.length();
+        int max = 0;
+        while (i < n && j < n) {
+            if(!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
+                max = Math.max(max,j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return max;
     }
 
     public static int lengthOfLongestSubstring(String s) {
@@ -57,7 +76,7 @@ class LongestSubstringWithoutRepeatingCharacters {
             }
 
             //剩余的子串都不如目前的大，则不用再检查了
-            if(length - i < maxLength){
+            if (length - i < maxLength) {
                 break;
             }
         }
