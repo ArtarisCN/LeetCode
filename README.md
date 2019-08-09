@@ -8,6 +8,18 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+
+### [746. Min Cost Climbing Stairs](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MinCostClimbingStairs.java)
+
+动态规划题目，每走一步都是由之前的一步或者两步走出来的，即状态转移方程为
+`Cost(index) = Max(Cost(index - 1) + cost[index - 1],Cost(index - 2) + cost[index - 2])` 
+设置一个记录用的数组，用来记录算过的每个阶梯的值，免得重复计算。
+最后设置一下递归终止条件：即走到第一层或者第二层时结束，返回0（因为可以从第一步或者第二步开始，不用花费体力）
+
+和[96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode#96-unique-binary-search-trees)思路类似.
+这里使用一个`List<TreeNode> generateTree(int start, int end)`函数来生成从 start「=start」到 end「=end」的所有子树，还是利用递归的方法，先取一个节点为根节点，然后分别构建其左右子树
+构建其左右子树的时候依旧调用这个递归方法，左右的范围分别为：for(i:0 -> n-1){left =(start, i - 1) -> right(i + 1, end)},构建出来的两个子树循环遍历即可
+
 ### [95. Unique Binary Search Trees II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniqueBinarySearchTreesII.java)
 
 和[96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode#96-unique-binary-search-trees)思路类似.
@@ -74,7 +86,7 @@ pop：
 给定一个排序好的列表和一个目标值，到找两个数是这个目标值的和
 使用两个指针，从两头往中间挤，和小了就动左边的指针，大了就动右边的指针
 
-### [160. Intersection of Two Linked Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/Intersection OfTwoLinkedLists.java)
+### [160. Intersection of Two Linked Lists](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/IntersectionOfTwoLinkedLists.java)
 
 查找两个相交链表的首个相交节点
 因为相交的两个链表在某处相交之后，后面就完全一样了。所以找到他们相同长度的地方「所以需要计算两个链表的长度」，开始同时向后推，相同节点的地方就是起始相交的地方
