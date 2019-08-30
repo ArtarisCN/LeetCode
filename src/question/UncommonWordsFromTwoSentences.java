@@ -23,7 +23,7 @@ class UncommonWordsFromTwoSentences {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(uncommonFromSentences("apple apple", "banana"));
+        PrintUtils.printf(uncommonFromSentences("apple apple", "banana"));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

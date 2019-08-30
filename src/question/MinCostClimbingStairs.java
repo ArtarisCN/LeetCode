@@ -33,7 +33,7 @@ class MinCostClimbingStairs {
         int[] costTotal = new int[cost.length + 1];
         Arrays.fill(costTotal, -1);
         int result = climbingStairs(cost, costTotal, cost.length);
-        PrintUtils.printfArray(costTotal);
+        PrintUtils.printf(costTotal);
         return result;
     }
 

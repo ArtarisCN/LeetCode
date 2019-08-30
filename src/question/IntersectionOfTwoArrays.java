@@ -22,7 +22,7 @@ class IntersectionOfTwoArrays {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(intersection(new int[]{1, 2, 2, 1},
+        PrintUtils.printf(intersection(new int[]{1, 2, 2, 1},
                 new int[]{2, 2}));
         //获取结束时间
         long endTime = System.currentTimeMillis();

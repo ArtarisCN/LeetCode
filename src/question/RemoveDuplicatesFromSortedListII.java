@@ -22,7 +22,7 @@ class RemoveDuplicatesFromSortedListII {
 
 //        PrintUtils.printfLinkedList(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,2,3,3,4,4,5})));
 //        PrintUtils.printfLinkedList(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,1,1,2,3})));
-        PrintUtils.printfLinkedList(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,1})));
+        PrintUtils.printf(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,1})));
 //        PrintUtils.printfLinkedList(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{})));
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -21,7 +21,7 @@ class OddEvenLinkedList {
         long startTime = System.currentTimeMillis();
 
 //        PrintUtils.printfLinkedList(oddEvenList(QuestionUtils.buildLinkedList(new int[]{1,2,3,4,5})));
-        PrintUtils.printfLinkedList(oddEvenList(QuestionUtils.buildLinkedList(new int[]{1})));
+        PrintUtils.printf(oddEvenList(QuestionUtils.buildLinkedList(new int[]{1})));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

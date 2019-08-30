@@ -42,11 +42,11 @@ public class SortUtils {
                 num[i] = temp;
             }
         }
-        PrintUtils.printfArray(num);
+        PrintUtils.printf(num);
         int temp = num[i];
         num[i] = num[start];
         num[start] = temp;
-        PrintUtils.printfArray(num);
+        PrintUtils.printf(num);
         System.out.println("------");
 
         _quickSort(num, start, i - 1);

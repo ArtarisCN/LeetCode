@@ -20,7 +20,7 @@ class RemoveLinkedListElements {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(removeElements(QuestionUtils.buildLinkedList(new int[]{}), 6));
+        PrintUtils.printf(removeElements(QuestionUtils.buildLinkedList(new int[]{}), 6));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

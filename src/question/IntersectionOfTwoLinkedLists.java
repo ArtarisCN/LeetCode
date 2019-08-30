@@ -48,20 +48,19 @@ class IntersectionOfTwoLinkedLists {
 
     public static ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
-        int lena = 0, lenb = 0;
-        ListNode cur1 = headA, cur2 = headB;
-        while (cur1 != null) {
-            lena++;
-            cur1 = cur1.next;
+        int lengthA = 0, lengthB = 0;
+        ListNode cura = headA, curB = headB;
+        while (cura != null) {
+            lengthA++;
+            cura = cura.next;
         }
-        while (cur2 != null) {
-            lenb++;
-            cur2 = cur2.next;
+        while (curB != null) {
+            lengthB++;
+            curB = curB.next;
         }
         ListNode first = headA, second = headB;
-        int step = 0;
-        step = Math.abs(lena - lenb);
-        if (lena > lenb) {
+        int step = Math.abs(lengthA - lengthB);
+        if (lengthA > lengthB) {
             for (int i = 0; i < step; i++) {
                 first = first.next;
             }

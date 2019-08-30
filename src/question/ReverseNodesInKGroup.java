@@ -20,10 +20,10 @@ class ReverseNodesInKGroup {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2,3,4,5,6,7,8,9}),3));
-        PrintUtils.printfLinkedList(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2}),3));
-        PrintUtils.printfLinkedList(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2}),2));
-        PrintUtils.printfLinkedList(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1}),2));
+        PrintUtils.printf(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2,3,4,5,6,7,8,9}),3));
+        PrintUtils.printf(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2}),3));
+        PrintUtils.printf(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1,2}),2));
+        PrintUtils.printf(reverseKGroup(QuestionUtils.buildLinkedList(new int[]{1}),2));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

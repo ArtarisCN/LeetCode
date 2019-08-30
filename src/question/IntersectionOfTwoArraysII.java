@@ -24,7 +24,7 @@ class IntersectionOfTwoArraysII {
         long startTime = System.currentTimeMillis();
 
 
-        PrintUtils.printfArray(intersect(new int[]{4,9,5},
+        PrintUtils.printf(intersect(new int[]{4,9,5},
                 new int[]{9,4,9,8,4}));
 
         //获取结束时间

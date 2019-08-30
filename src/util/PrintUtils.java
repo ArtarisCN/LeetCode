@@ -22,7 +22,7 @@ public class PrintUtils {
      *
      * @param node
      */
-    public static void printfLinkedList(ListNode node) {
+    public static void printf(ListNode node) {
         if (node == null) {
             System.out.println("null");
             return;
@@ -36,7 +36,7 @@ public class PrintUtils {
         System.out.println(node.val);
     }
 
-    public static void printfArray(int[] array) {
+    public static void printf(int[] array) {
         if (array != null) {
             for (int i : array) {
                 System.out.print(i);
@@ -46,7 +46,7 @@ public class PrintUtils {
         System.out.println();
     }
 
-    public static void printfArray(char[] array) {
+    public static void printf(char[] array) {
         if (array != null) {
             for (char i : array) {
                 System.out.print(i);
@@ -56,7 +56,7 @@ public class PrintUtils {
         System.out.println();
     }
 
-    public static <T> void printfArray(T[] array) {
+    public static <T> void printf(T[] array) {
         if (array != null) {
             for (T i : array) {
                 System.out.print(i);

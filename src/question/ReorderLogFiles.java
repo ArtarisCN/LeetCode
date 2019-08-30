@@ -18,7 +18,7 @@ class ReorderLogFiles {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(reorderLogFiles(new String[]{"a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"}));
+        PrintUtils.printf(reorderLogFiles(new String[]{"a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

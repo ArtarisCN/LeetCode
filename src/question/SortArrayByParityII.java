@@ -18,7 +18,7 @@ class SortArrayByParityII {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(sortArrayByParityII(new int[]{4, 2, 5, 7}));
+        PrintUtils.printf(sortArrayByParityII(new int[]{4, 2, 5, 7}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

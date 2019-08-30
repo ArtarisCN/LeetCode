@@ -21,9 +21,9 @@ class ReverseLinkedList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(reverseList2(buildLinkedList(new int[]{1, 2, 3, 4, 5})));
-        PrintUtils.printfLinkedList(reverseList2(null));
-        PrintUtils.printfLinkedList(reverseList2(buildLinkedList(new int[]{1})));
+        PrintUtils.printf(reverseList2(buildLinkedList(new int[]{1, 2, 3, 4, 5})));
+        PrintUtils.printf(reverseList2(null));
+        PrintUtils.printf(reverseList2(buildLinkedList(new int[]{1})));
 
 //        reversePrintList(buildLinkedList(new int[]{1,2,3,4,5}));
 

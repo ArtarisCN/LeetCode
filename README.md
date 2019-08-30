@@ -8,6 +8,25 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+### [142. Linked List Cycle II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LinkedListCycleII.java)
+
+最开始我没想到好办法，使用了一个 Map 来存储，K 和 V 分别对对应前一个节点和后一个节点，顺序遍历整个链表，当某两个节点的 V 相同的时候，说明有两个不同的节点指向了相同的节点，依照这个思路可以过，但是时间很长
+
+回到快慢指针的方法，使用慢指针走一步，快指针走两步，则第一次相遇时快指针会比慢指针正好多走环的距离一圈。下面假设几个值：
+K ：起点到入环点的距离
+P ：入环点到第一次相遇点的距离
+Q ：第一次相遇点绕了一圈回到入环点的距离
+L ：环的长度，即 L = P + Q
+
+![](http://img.artaris.cn//blog/img/20190830134310.png)
+
+我们只要知道这几个值就能知道入环点的位置。
+那么相遇时，慢指针走了 K + P 步，快指针走了 K + P + Q + P 步，由于快指针的速度是慢指针的两倍，则
+$$K + P + Q + P = 2(K + P)$$ 
+化简得到
+$$K = Q$$
+即从相遇点到入环点的距离和起点到入环点的距离相同。
+我们已经得到了相遇点，这时再起一个指针从头开始以速度为 1 向前，慢指针继续走，它俩的速度保持一致，当它们相等时，就找到了入环点
 
 ### [746. Min Cost Climbing Stairs](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/MinCostClimbingStairs.java)
 
@@ -307,7 +326,6 @@ result(n) = result(n - 1) +result(n - 2)
 计算次数的时候加一下判断
 
 ### [141. Linked List Cycle](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LinkedListCycle.java)
-快慢指针的思路求解是否有环形链表的方法。
 设置两个指针，一个每次走一步，一个每次走两步，如果存在环形链表，那么这两个指针的结果都是在环上绕圈子。快指针一定会在这个圈子上追上慢指针，也注定不会错过一定会有这两个指针相等的时候。
 ### [16. 3Sum Closest](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/ThreeSumClosest.java)
 我的解法基本和[15. 3Sum](https://github.com/ArtarisCN/LeetCode#15-3sum)类似。只是多使用了一个变量来计算差值，每次比较的是当前差值和之前的差值的大小。
@@ -316,6 +334,7 @@ result(n) = result(n - 1) +result(n - 2)
 要注意的是
 1. 如果左右两个边界差值为1 的时候就可以返回了，以免陷入死循环（因为取中间值每次都不会再缩小边界了）
 2. 最后应该返回左边界，因为题目要求的答案是向下取整
+快慢指针的思路求解是否有环形链表的方法。
 
 **数学方法**
 

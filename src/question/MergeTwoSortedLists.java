@@ -18,7 +18,7 @@ class MergeTwoSortedLists {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(
+        PrintUtils.printf(
                 mergeTwoLists(
                         QuestionUtils.buildLinkedList(new int[]{}),
                         QuestionUtils.buildLinkedList(new int[]{})

@@ -2,7 +2,7 @@ package question;
 
 import model.ListNode;
 
-import static util.PrintUtils.printfLinkedList;
+import static util.PrintUtils.printf;
 import static util.QuestionUtils.buildLinkedList;
 
 /**
@@ -20,7 +20,7 @@ class ReverseLinkedListII {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        printfLinkedList(reverseBetween(buildLinkedList(new int[]{1}), 1, 1));
+        printf(reverseBetween(buildLinkedList(new int[]{1}), 1, 1));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

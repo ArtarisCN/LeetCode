@@ -19,7 +19,7 @@ class RemoveDuplicatesFromSortedList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,1})));
+        PrintUtils.printf(deleteDuplicates(QuestionUtils.buildLinkedList(new int[]{1,1})));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

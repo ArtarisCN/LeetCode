@@ -20,8 +20,8 @@ class SortList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(sortList(QuestionUtils.buildLinkedList(new int[]{4,2,1,3})));
-        PrintUtils.printfLinkedList(sortList(QuestionUtils.buildLinkedList(new int[]{5,4,2,1,6,3})));
+        PrintUtils.printf(sortList(QuestionUtils.buildLinkedList(new int[]{4,2,1,3})));
+        PrintUtils.printf(sortList(QuestionUtils.buildLinkedList(new int[]{5,4,2,1,6,3})));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -22,7 +22,7 @@ class ReorderList {
 
         ListNode node = QuestionUtils.buildLinkedList(new int[]{1});
         reorderList(node);
-        PrintUtils.printfLinkedList(node);
+        PrintUtils.printf(node);
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

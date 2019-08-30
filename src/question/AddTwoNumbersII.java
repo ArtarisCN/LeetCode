@@ -27,13 +27,13 @@ class AddTwoNumbersII {
 //                QuestionUtils.buildLinkedList(new int[]{5, 6, 4})
 //        ));
 
-        PrintUtils.printfLinkedList(addTwoNumbers(
+        PrintUtils.printf(addTwoNumbers(
                 QuestionUtils.buildLinkedList(new int[]{1}),
                 QuestionUtils.buildLinkedList(new int[]{9,9})
         ));
 
 
-        PrintUtils.printfLinkedList(addTwoNumbers(
+        PrintUtils.printf(addTwoNumbers(
                 QuestionUtils.buildLinkedList(new int[]{}),
                 QuestionUtils.buildLinkedList(new int[]{})
         ));

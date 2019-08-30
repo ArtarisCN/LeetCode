@@ -18,7 +18,7 @@ class TwoSumIIInputArrayIsSorted {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(twoSum(new int[]{2, 7, 11, 15}, 9));
+        PrintUtils.printf(twoSum(new int[]{2, 7, 11, 15}, 9));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

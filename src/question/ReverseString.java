@@ -20,7 +20,7 @@ class ReverseString {
 
         char[] s =  new char[]{'a','b','c','d','e'};
         reverseString(s);
-        PrintUtils.printfArray(s);
+        PrintUtils.printf(s);
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

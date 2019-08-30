@@ -29,33 +29,60 @@ class ValidAnagram {
         if (s == null || t == null || s.length() != t.length()) {
             return false;
         }
-
         Map<Character, Integer> value = new HashMap<>();
-
         for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-
-            if (value.containsKey(c)) {
-                value.put(c, value.get(c) + 1);
+            value.put(s.charAt(i), value.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < t.length(); i++) {
+            if (value.getOrDefault(t.charAt(i), 0) - 1 < 0) {
+                return false;
             } else {
-                value.put(c, 1);
+                value.put(t.charAt(i), value.get(t.charAt(i)) - 1);
             }
         }
+        return true;
+    }
 
-        for (int i = 0; i < t.length(); i++) {
-            char c = t.charAt(i);
+    public static boolean isAnagram2(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+        int[] value = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            value[s.charAt(i) - 'a'] ++;
+            value[t.charAt(i) - 'a'] --;
+        }
 
-            if (value.containsKey(c)) {
-                if (value.get(c) == 1) {
-                    value.remove(c);
-                } else {
-                    value.put(c, value.get(c) - 1);
-                }
-            } else {
+        for (int i : value) {
+            if(i != 0){
                 return false;
             }
         }
 
         return true;
     }
+
+    public static boolean isAnagram3(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+        int[] value = new int[26];
+        char chars[] = s.toCharArray();
+        char chart[] = t.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            value[chars[i] - 'a'] ++;
+            value[chart[i] - 'a'] --;
+        }
+
+        for (int i : value) {
+            if(i != 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+
 }

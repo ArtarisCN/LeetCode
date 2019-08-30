@@ -23,9 +23,9 @@ class RelativeRanks {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(findRelativeRanks(new int[]{5, 4, 3, 2, 1}));
+        PrintUtils.printf(findRelativeRanks(new int[]{5, 4, 3, 2, 1}));
         System.out.println();
-        PrintUtils.printfArray(findRelativeRanks(new int[]{4, 1}));
+        PrintUtils.printf(findRelativeRanks(new int[]{4, 1}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

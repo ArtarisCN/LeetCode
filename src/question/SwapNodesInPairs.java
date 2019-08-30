@@ -21,7 +21,7 @@ class SwapNodesInPairs {
         long startTime = System.currentTimeMillis();
 
 //        PrintUtils.printfLinkedList(swapPairs(QuestionUtils.buildLinkedList(new int[]{1,2,3,4,5,6})));
-        PrintUtils.printfLinkedList(swapPairs(QuestionUtils.buildLinkedList(new int[]{1})));
+        PrintUtils.printf(swapPairs(QuestionUtils.buildLinkedList(new int[]{1})));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -20,7 +20,7 @@ class BricksFallingWhenHit {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(hitBricks(new int[][]{{1, 0, 1}, {0, 0, 1}}, new int[][]{{1, 0}, {0, 0}}));
+        PrintUtils.printf(hitBricks(new int[][]{{1, 0, 1}, {0, 0, 1}}, new int[][]{{1, 0}, {0, 0}}));
 //        PrintUtils.printfArray(hitBricks(new int[][]{{1, 0, 0, 0}, {1, 1, 0, 0}}, new int[][]{{1, 1}, {1, 0}}));
 //        PrintUtils.printfArray(hitBricks(new int[][]{{1},{1},{1},{1},{1}}, new int[][]{{3, 0},{4, 0},{1, 0},{2, 0},{0, 0}}));
 //        PrintUtils.printfArray(hitBricks(new int[][]{{1, 0, 1}, {1, 1, 1}}, new int[][]{{0, 0}, {0, 2},{1, 1}}));

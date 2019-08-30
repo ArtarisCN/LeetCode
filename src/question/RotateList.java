@@ -20,7 +20,7 @@ class RotateList {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfLinkedList(rotateRight(QuestionUtils.buildLinkedList(new int[]{0,1,2}),4));
+        PrintUtils.printf(rotateRight(QuestionUtils.buildLinkedList(new int[]{0,1,2}),4));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

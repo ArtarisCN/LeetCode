@@ -22,7 +22,7 @@ class FairCandySwap {
         //获取开始时间
         long startTime = System.currentTimeMillis();
 
-        PrintUtils.printfArray(fairCandySwap(new int[]{2}, new int[]{1, 3}));
+        PrintUtils.printf(fairCandySwap(new int[]{2}, new int[]{1, 3}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

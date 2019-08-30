@@ -21,9 +21,9 @@ class MinimumIndexSumOfTwoLists {
     public static void main(String[] args) {
         //获取开始时间
         long startTime = System.currentTimeMillis();
-        PrintUtils.printfArray(findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"}));
+        PrintUtils.printf(findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"}));
 
-        PrintUtils.printfArray(findRestaurant(new String[]{"KFC", "Shogun", "Burger King"}, new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}));
+        PrintUtils.printf(findRestaurant(new String[]{"KFC", "Shogun", "Burger King"}, new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -21,7 +21,7 @@ class PartitionList {
         long startTime = System.currentTimeMillis();
 
 
-        PrintUtils.printfLinkedList(partition(QuestionUtils.buildLinkedList(new int[]{1,4,3,2,5,2}),3));
+        PrintUtils.printf(partition(QuestionUtils.buildLinkedList(new int[]{1,4,3,2,5,2}),3));
 
         //获取结束时间
         long endTime = System.currentTimeMillis();

@@ -22,7 +22,7 @@ class NextPermutation {
 
         nextPermutation(nums);
 
-        PrintUtils.printfArray(nums);
+        PrintUtils.printf(nums);
 
         //获取结束时间
         long endTime = System.currentTimeMillis();
