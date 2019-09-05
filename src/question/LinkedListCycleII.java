@@ -48,7 +48,6 @@ class LinkedListCycleII {
             return null;
         }
         ListNode fast = head,slow = head,newNode = head;
-
         do {
             if(fast.next == null){
                 break;

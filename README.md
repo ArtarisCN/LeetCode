@@ -8,15 +8,26 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+
+### [75. Sort Colors](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SortColors.java)
+
+> ## 计数排序
+> 1. 通过一次遍历，得到数组中的最大值 max 和最小值 min
+> 2. 使用 {max - min} 得到的数申请额外数组空间，其中的每一位将记录原数组元素出现的次数
+> 3. 再次遍历原数组，统计原数组中元素出现的次数。「如原数组出现了 n ,则将额外数组空间的第 (n - min) 位 + 1 代表其出现次数多了一位」
+> 4. 遍历额外空间数组，从小到大对原数组重新赋值
+> 可以预见，如果待排序数组的最大值和最小值的差距很大，会很耗费空间。
+
+
 ### [142. Linked List Cycle II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/LinkedListCycleII.java)
 
 最开始我没想到好办法，使用了一个 Map 来存储，K 和 V 分别对对应前一个节点和后一个节点，顺序遍历整个链表，当某两个节点的 V 相同的时候，说明有两个不同的节点指向了相同的节点，依照这个思路可以过，但是时间很长
 
 回到快慢指针的方法，使用慢指针走一步，快指针走两步，则第一次相遇时快指针会比慢指针正好多走环的距离一圈。下面假设几个值：
-K ：起点到入环点的距离
-P ：入环点到第一次相遇点的距离
-Q ：第一次相遇点绕了一圈回到入环点的距离
-L ：环的长度，即 L = P + Q
+- K ：起点到入环点的距离
+- P ：入环点到第一次相遇点的距离
+- Q ：第一次相遇点绕了一圈回到入环点的距离
+- L ：环的长度，即 L = P + Q
 
 ![](http://img.artaris.cn//blog/img/20190830134310.png)
 
