@@ -8,6 +8,14 @@
 > JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 > macOS 10.14.4
 
+### [1114. Print in Order](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/PrintInOrder.java)
+
+有三个方法，三个线程分别去调用这三个方法。题目要求first必须在second之前执行，second必须在third之前执行。
+
+这里使用了一个比较取巧的办法，用一个标记位来标记上一个优先级更高的线程是否执行完成，如果没有当前线程则则进行while循环等待。
+
+私以为应该使用所来解决问题的。
+
 
 ### [75. Sort Colors](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/SortColors.java)
 
@@ -45,10 +53,6 @@ $$K = Q$$
 `Cost(index) = Max(Cost(index - 1) + cost[index - 1],Cost(index - 2) + cost[index - 2])` 
 设置一个记录用的数组，用来记录算过的每个阶梯的值，免得重复计算。
 最后设置一下递归终止条件：即走到第一层或者第二层时结束，返回0（因为可以从第一步或者第二步开始，不用花费体力）
-
-和[96. Unique Binary Search Trees](https://github.com/ArtarisCN/LeetCode#96-unique-binary-search-trees)思路类似.
-这里使用一个`List<TreeNode> generateTree(int start, int end)`函数来生成从 start「=start」到 end「=end」的所有子树，还是利用递归的方法，先取一个节点为根节点，然后分别构建其左右子树
-构建其左右子树的时候依旧调用这个递归方法，左右的范围分别为：for(i:0 -> n-1){left =(start, i - 1) -> right(i + 1, end)},构建出来的两个子树循环遍历即可
 
 ### [95. Unique Binary Search Trees II](https://github.com/ArtarisCN/LeetCode/blob/master/src/question/UniqueBinarySearchTreesII.java)
 
